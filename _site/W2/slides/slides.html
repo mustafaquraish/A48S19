@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSCA48 Summer 2019</title>
+  <meta name="description" content="Tutorial Notes">
+  <meta name="author" content="co-authored by Mustafa Quraish and Lucy Tishkina">
+  <link rel="stylesheet" href="/A48S19/assets/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Source+Serif+Pro" rel="stylesheet">
+  <link rel="canonical" href="http://localhost:4000/A48S19/W2/slides/slides">
+  <link rel="alternate" type="application/atom+xml" title="CSCA48 Summer 2019" href="/A48S19/feed.xml">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+
+<!--content-begin-->
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title", style="text-align:center;"></h1>
+  </header>
+  <div class="post-content">
+
+<!--  -->
+
+<h1 id="week-2-tutorial">Week 2 Tutorial</h1>
+
+<hr />
+
+<h2 id="working-with-the-c-memory-model">Working with the C memory model</h2>
+
+<hr />
+
+<ul>
+  <li>
+    <p>In this exercise, we’re going to trace a piece of code and see how all the variables are being stored in the memory model.</p>
+  </li>
+  <li>
+    <p>Before we do this, it is important that you have read the Unit 2 notes - we’ll be using the same method as those to do our analysis here.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="why-do-this-at-all">Why do this at all?</h2>
+
+<ul>
+  <li>
+    <p>C is very low level, and understanding what is going on in memory is going to be <strong>crucial</strong> to writing and debugging complex programs effectively.</p>
+  </li>
+  <li>
+    <p>Yes - it’s tedious at first, but once you get used to thinking this way, you will find yourself less prone to making a lot of common errors.</p>
+  </li>
+  <li>
+    <p>This also carries over to other programming languages!</p>
+  </li>
+</ul>
+
+<hr />
+
+<p>Look at the following program:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">multiply_with_table</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Prints the multiplication table for a starting at 1 and
+</span>  <span class="c1">// going up to b, returning the value of a*b.
+</span>
+  <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="n">b</span><span class="p">;</span> <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%dx%d=%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">a</span><span class="o">*</span><span class="n">i</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="mi">15</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">z</span><span class="p">;</span>
+  <span class="n">z</span><span class="o">=</span><span class="n">multiply_with_table</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"The result of %x x %d is %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>Here’s questions you should be able to answer <strong>without</strong> running the code:</p>
+
+<ul>
+  <li>How many boxes will be used by this program?</li>
+  <li>After any given line of code is run, what boxes have what values stored in them? Which variables do each of these boxes represent?</li>
+  <li>When are the boxes for return values in both functions updated and/or used?</li>
+  <li>What will be printed after this program is run?</li>
+</ul>
+
+<hr />
+
+<p>Once you’ve answered these questions on paper, run the program to see if your answer was correct.</p>
+
+<hr />
+
+<h2 id="a-division-program">A division program</h2>
+
+<hr />
+
+<p>Completing the following code:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+</span>
+<span class="kt">int</span> <span class="nf">find_multiplier</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Return an integer c such that  b = a * c
+</span>  <span class="c1">// If no such integer exists, return -1
+</span>  <span class="c1">// However, do *NOT* use the division operator.
+</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Declare and initialize two positive integers a and b
+</span>
+
+  <span class="c1">// Call the find_multiplier() function with these and 
+</span>  <span class="c1">// print out the return value to the screen
+</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>Make sure you get this working! After you’re done, ask yourself these questions:</p>
+
+<ul>
+  <li>What are the limitations and assumptions in your solution?</li>
+  <li>When do you stop trying different values for <code class="highlighter-rouge">c</code>?</li>
+  <li>Are there different ways to do this? Why are they better / worse?</li>
+  <li>Why are you doing it this way anyway?</li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>
+    <p>The point of this exercise is to illustrate that some problems may not have
+an obviously right/wrong answer.</p>
+  </li>
+  <li>
+    <p>We always want to be thinking critically of the programs
+we write, and trying to understand what’s good/bad about the approach we have chosen.</p>
+  </li>
+  <li>
+    <p>Before we get wrapped up, let’s try and think about extending what we just did here.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="a-harder-division-problem">A harder division problem</h2>
+
+<hr />
+
+<ul>
+  <li>
+    <p>Having implemeted the above program, you now maybe understand that division isn’t a very trivial operation.</p>
+  </li>
+  <li>
+    <p><em>However, you’ve just been working with integers so far.</em></p>
+  </li>
+  <li>
+    <p>What would happen if you were working with floating point numbers instead? Being able to do this is something we take for granted when programming, but it is definitely not trivial!</p>
+  </li>
+</ul>
+
+<hr />
+
+<p>Give it some thought - how does the CPU in your computer divide floating point numbers? Could you implement a solution
+similar to the previous exercise?</p>
+
+<hr />
+
+<p>Here’s some code for you to complete:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+</span>
+<span class="kt">float</span> <span class="nf">find_multiplier_floats</span><span class="p">(</span><span class="kt">float</span> <span class="n">a</span><span class="p">,</span> <span class="kt">float</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Return a float c such that b = a * c
+</span>  <span class="c1">// You may assume a is non-zero. This is tricky!
+</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><em>Try this!</em> It may not be easy, but it’s great practice in problem solving as well
+as coding in C.</p>
+
+<hr />
+
+<h1 id="additional-exercises">Additional Exercises</h1>
+
+<hr />
+
+<ul>
+  <li>Take the division functions you implemented earlier and trace the memory model for them. It’s good practice for your quiz and exams!</li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>Read the notes. They’re extremely detailed with a whole bunch of examples and exercises for you to do. Attempt them all!</li>
+</ul>
+
+<hr />
+
+<ul>
+  <li>Write a program that loops over the numbers from 1-100, and prints out all the perfect squares. Analyze your solution: Is this an efficient way of doing it? If instead you had to loop over the numbers from 1-900, how much code would you need to change to accomplish this? (Ideally, it shouldn’t be more than one line).</li>
+</ul>
+
+<!--  -->
+
+
+  </div>
+</article>
+
+<!--content-end-->
+
+    </div>
+  </main>
+
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger" class="nav-button"><span class="nav-icon"></span></label>
+  <label for="nav-trigger" class="overlay"></label>
+
+  <div class="sidebar">
+    <div class="wrapper">
+      <header class="site-header">
+        <a class="site-title" href="/A48S19/">
+          <h2>CSCA48 Summer 2019</h2>
+          <p class="meta">Tutorial Notes</p>
+        </a>
+      </header>
+      <nav class="site-nav">
+
+<!--navigation-content-begin-->
+<ul>
+  <li><a href="/A48S19/W1/">Week 1</a></li>
+  <li><a href="/A48S19/W2/">Week 2</a></li>
+</ul>
+<!--navigation-content-end-->
+
+      </nav>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

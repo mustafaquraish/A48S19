@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notable Features</title>
+  <meta name="description" content="Tutorial Notes">
+  <meta name="author" content="co-authored by Mustafa Quraish and Lucy Tishkina">
+  <link rel="stylesheet" href="/A48S19/assets/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Source+Serif+Pro" rel="stylesheet">
+  <link rel="canonical" href="http://localhost:4000/A48S19/features">
+  <link rel="alternate" type="application/atom+xml" title="CSCA48 Summer 2019" href="/A48S19/feed.xml">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+
+<!--content-begin-->
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title", style="text-align:center;">Notable Features</h1>
+  </header>
+  <div class="post-content">
+
+<p>HydeBar is a fully responsive HTML5 sidebar template for the static site generator Jekyll:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#quickstart-online-in-5-minutes" id="markdown-toc-quickstart-online-in-5-minutes">Quickstart: Online in 5 minutes</a></li>
+  <li><a href="#no-dependencies---runs-on-github-pages" id="markdown-toc-no-dependencies---runs-on-github-pages">No dependencies - runs on GitHub Pages</a></li>
+  <li><a href="#responsive-css-driven-sidebar" id="markdown-toc-responsive-css-driven-sidebar">Responsive, CSS driven sidebar</a></li>
+  <li><a href="#revealjs-slideshow-integration" id="markdown-toc-revealjs-slideshow-integration">Reveal.js slideshow integration</a></li>
+  <li><a href="#posts-archive-page-by-year" id="markdown-toc-posts-archive-page-by-year">Posts archive page by year</a></li>
+  <li><a href="#category-and-tag-index-pages" id="markdown-toc-category-and-tag-index-pages">Category and tag index pages</a></li>
+  <li><a href="#atom-feed" id="markdown-toc-atom-feed">Atom feed</a></li>
+  <li><a href="#robotstxt-sitemapxml" id="markdown-toc-robotstxt-sitemapxml">robots.txt, sitemap.xml</a></li>
+  <li><a href="#custom-404-error-page-which-shows-the-post-archive" id="markdown-toc-custom-404-error-page-which-shows-the-post-archive">Custom 404 error page which shows the post archive</a></li>
+  <li><a href="#support-for-multiple-authors" id="markdown-toc-support-for-multiple-authors">Support for multiple authors</a></li>
+  <li><a href="#support-for-subtitles" id="markdown-toc-support-for-subtitles">Support for subtitles</a></li>
+  <li><a href="#ui-localization---help-needed-for-more-languages" id="markdown-toc-ui-localization---help-needed-for-more-languages">UI localization - help needed for more languages</a></li>
+  <li><a href="#easy-toc-creation" id="markdown-toc-easy-toc-creation">Easy ToC creation</a></li>
+  <li><a href="#figure-captions-with-a-css-helper-class" id="markdown-toc-figure-captions-with-a-css-helper-class">Figure captions with a CSS helper class</a></li>
+  <li><a href="#more-css-helper-classes" id="markdown-toc-more-css-helper-classes">More CSS helper classes</a></li>
+  <li><a href="#disqus-comments" id="markdown-toc-disqus-comments">Disqus comments</a></li>
+  <li><a href="#google-analytics" id="markdown-toc-google-analytics">Google Analytics</a></li>
+  <li><a href="#w3c-valid-output---fast-and-secure" id="markdown-toc-w3c-valid-output---fast-and-secure">W3C valid output - fast and secure</a></li>
+</ul>
+
+<p>Miss something? Create it, share it…</p>
+
+<h2 id="quickstart-online-in-5-minutes">Quickstart: Online in 5 minutes</h2>
+
+<p>Everything in your browser:</p>
+
+<ul>
+  <li>Login to <a href="https://github.com/">GitHub</a></li>
+  <li>Fork repository <a href="https://github.com/ogobrecht/hydebar">HydeBar</a></li>
+  <li>Edit <code class="highlighter-rouge">_config.yml</code> (url, baseurl)</li>
+  <li>Change repository settings
+    <ul>
+      <li>Rename to yourUserName.github.io</li>
+      <li>Activate GitHub Pages</li>
+    </ul>
+  </li>
+  <li>Done!</li>
+</ul>
+
+<p>On the very first time when GitHub is generating your site this could take some minutes.</p>
+
+<p>After this quick start it is time to look in detail to some more settings:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">_data/authors</code></li>
+  <li><code class="highlighter-rouge">_config.yml</code>
+    <ul>
+      <li>Permalink <a href="https://jekyllrb.com/docs/permalinks/">Jekyll Docs</a></li>
+      <li>Your brand color</li>
+      <li>Sidebar settings</li>
+      <li>…</li>
+    </ul>
+  </li>
+  <li><code class="highlighter-rouge">/about.md</code></li>
+  <li><code class="highlighter-rouge">/imprint.md</code></li>
+  <li><code class="highlighter-rouge">/privacy-statement.md</code></li>
+  <li>…</li>
+</ul>
+
+<p>And of course you should delete or overwrite the default content with your own ;-)</p>
+
+<h2 id="no-dependencies---runs-on-github-pages">No dependencies - runs on GitHub Pages</h2>
+
+<p>The template has no dependencies on external plugins - therefore it can run on GitHub Pages. Except for the Jekyll blackbox itself (which renders your site) everything is implemented with Liquid templates located in the directories <code class="highlighter-rouge">_layouts</code> and <code class="highlighter-rouge">_includes</code>. No hidden secrets and highly customizable to your needs :-)</p>
+
+<h2 id="responsive-css-driven-sidebar">Responsive, CSS driven sidebar</h2>
+
+<p>HydeBar is a fully responsive HTML5 template. Except for the integration of the Reveal.js slideshow, Disqus comments and Google analytics it needs no activated JavaScript on the client side. The sidebar is complete CSS driven.</p>
+
+<p>Per default there are some sections on the sidebar: Under the Header you will find a list of all pages which have the Front Matter variable <code class="highlighter-rouge">sidebar</code> set to a value higher then 0. The value is used to order the pages.</p>
+
+<p>Then we have a list of all Categories used in the posts. After that a list of all tags. Then a list of all contact details from the site author - see also <code class="highlighter-rouge">_config.yml</code> and <code class="highlighter-rouge">_data/authors</code>.</p>
+
+<p>The last section is a list of all pages with the Front Matter variable <code class="highlighter-rouge">sidebar-legal</code> set to a value higher then 0.</p>
+
+<p>All section headers are automatically hidden, when no data is found for the section. You can configure the visibility of each section in the file <code class="highlighter-rouge">_config.yml</code> - per default are categories and tags hidden (see also the archive page - they are shown there):</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">sidebar</span><span class="pi">:</span>
+  <span class="na">pages</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">categories</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="na">tags</span><span class="pi">:</span> <span class="no">false</span>
+  <span class="na">contact</span><span class="pi">:</span> <span class="no">true</span>
+  <span class="na">legal</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<h2 id="revealjs-slideshow-integration">Reveal.js slideshow integration</h2>
+
+<p><a href="https://github.com/hakimel/reveal.js">Reveal.js</a> (<a href="http://lab.hakim.se/reveal-js/">demo</a>) supports directly Markdown - this is pretty cool, because we can write now also presentations in Markdown.</p>
+
+<p>Clear - there are some special things when writing content for a presentation. The obvious question is how we mark the begin end the end of a slide. The answer: It depends on you - you can configure the slide separator as a regular expression. Per default we reuse the horizontal row - this seems to be very natural:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gu">## Example Presentation</span>
+<span class="p">
+-----
+</span>
+<span class="gu">## Introduction</span>
+<span class="p">
+---
+</span>
+<span class="gu">### A vertical slide</span>
+
+It is indicated by three dashes
+<span class="p">
+-----
+</span>
+<span class="gu">## The next horizontal slide</span>
+
+It is indicated by five dashes
+<span class="p">
+---
+</span>
+<span class="gu">### Again a vertical slide</span>
+<span class="p">
+-</span> A reference-style link to a <span class="p">[</span><span class="nv">Markdown cheatsheet</span><span class="p">][</span><span class="ss">1</span><span class="p">]</span>
+<span class="p">-</span> Another link to <span class="p">[</span><span class="nv">GitHub-flavored Markdown</span><span class="p">][</span><span class="ss">2</span><span class="p">]</span>
+
+<span class="p">[</span><span class="ss">1</span><span class="p">]:</span> <span class="sx">https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links</span>
+<span class="p">[</span><span class="ss">2</span><span class="p">]:</span> <span class="sx">https://help.github.com/categories/writing-on-github/</span>
+<span class="p">
+-----
+</span>
+<span class="gu">## The End</span>
+<span class="gu">### Questions?</span>
+
+</code></pre></div></div>
+
+<p><strong><em>Some things to explain</em></strong></p>
+
+<p>Reveal.js supports horizontal and vertical slides and by pressing the <code class="highlighter-rouge">Esc</code> key you get a nice overview of all slides. If you organize your slides in horizontal main points and vertical details you are able to navigate fast in your whole presentation when using the overview. For a list of all shortcuts press the <code class="highlighter-rouge">?</code> in a presentation</p>
+
+<p>The default regular expression forces you to have a blank line before and after the horizontal row to be recognized as a slide separator.</p>
+
+<p>Markdown allows you to provide so called reference-style links - you put the URL outside of the current text to improve the readability. Reveal seems to slice the presentation into single slides first and then rendering each slide. Because of this you need to have all URLs of reference-style links on the same slide - otherwise your links would not work. No big deal but good to know.</p>
+
+<p>The Reveal.js integration assumes, that you put each slideshow in an own directory. The reason for this is that you normally have many resources like images or other stuff, which should be saved together with your slides. Another reason is that we need for the start of the slideshow a reveal layout and for the slides itself an extra markdown file without Front Matter. Jekyll will then convert the slides to HTML with the default layout and also copy the file itself to the <code class="highlighter-rouge">_site</code> folder for the webserver. An example directory:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.
+├── ...
+├── slides
+|   └── 2017-11-22-example-presentation
+|       ├── assets
+|       |   ├── image_1.png
+|       |   ├── image_2.png
+|       |   └── ...
+|       ├── index.md   # with Front Matter
+|       └── slides.md  # without Front Matter
+├── ...
+</code></pre></div></div>
+
+<p>To start the example presentation in a post or page you call a helper include:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="na">slides</span><span class="p">.</span><span class="na">html</span><span class="w"> </span><span class="na">path</span><span class="o">=</span><span class="s2">"/slides/2017-11-22-example-presentation"</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p>You don’t need to care about <code class="highlighter-rouge">{{ site.baseurl }}</code> - this is handled by the include. We call it now here - as a result you get a whole block of informations to run your presentation:</p>
+
+<p><a href="/A48S19/slides/2017-11-22-example-presentation/" target="_blank">Open HTML presentation in a new window/tab</a></p>
+
+<div class="post-meta">
+  <p>You need a modern browser with activated JavaScript. Navigation tips:</p>
+  <ul>
+    <li><code>Space</code> = Next slide</li>
+    <li><code>Shift</code> + <code>Space</code> = Previous slide</li>
+    <li><code>Esc</code> = Overview all slides</li>
+    <li><code>?</code> = Overview all keyboard shortcuts</li>
+    <li>All links are opened in a new window/tab</li>
+    <li><a href="/A48S19/slides/2017-11-22-example-presentation/slides.html">Raw HTML Version with notes</a></li>
+    <li><a href="/A48S19/slides/2017-11-22-example-presentation/slides.md">Raw Markdown Version</a></li>
+  </ul>
+</div>
+
+<p>Do you want to have a PDF version of your slides? No problem, Reveal.js supports this with the help of Google Chrome or Chromium. You need to load a special CSS by passing in an URL parameter <code class="highlighter-rouge">.../slides/2017-11-22-example-presentation?print-pdf</code> and then print with the browsers built in “Save as PDF” function. All the details can be found <a href="https://github.com/hakimel/reveal.js#pdf-export">here</a>.</p>
+
+<p>Reveal supports nine different themes out of the box. You can configure the default theme and other things in the <code class="highlighter-rouge">_config.yml</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">slides</span><span class="pi">:</span>
+  <span class="na">theme</span><span class="pi">:</span> <span class="s">solarized</span>
+  <span class="na">data-separator</span><span class="pi">:</span> <span class="s2">"</span><span class="s">^</span><span class="se">\\</span><span class="s">r?</span><span class="se">\\</span><span class="s">n-----</span><span class="se">\\</span><span class="s">r?</span><span class="se">\\</span><span class="s">n$"</span>
+  <span class="na">data-separator-vertical</span><span class="pi">:</span> <span class="s2">"</span><span class="s">^</span><span class="se">\\</span><span class="s">r?</span><span class="se">\\</span><span class="s">n---</span><span class="se">\\</span><span class="s">r?</span><span class="se">\\</span><span class="s">n$"</span>
+  <span class="na">data-separator-notes</span><span class="pi">:</span> <span class="s2">"</span><span class="s">^Notes:"</span>
+</code></pre></div></div>
+
+<p>You can overwrite these settings in your presentations <code class="highlighter-rouge">index.md</code></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Example Presentation</span>
+<span class="na">lang</span><span class="pi">:</span> <span class="s">en</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">slides</span>
+<span class="na">slides</span><span class="pi">:</span>
+  <span class="na">theme</span><span class="pi">:</span> <span class="s">black</span>
+  <span class="na">data-separator-notes</span><span class="pi">:</span> <span class="s2">"</span><span class="s">^My</span><span class="nv"> </span><span class="s">personal</span><span class="nv"> </span><span class="s">notes:"</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<h2 id="posts-archive-page-by-year">Posts archive page by year</h2>
+
+<p>The template delivers an archive page. This page uses the following include to render a list of all posts by year:</p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span><span class="na">post-list-by-year</span><span class="p">.</span><span class="na">html</span><span class="w"> </span><span class="p">%}</span>
+</code></pre></div></div>
+
+<p>This include is also used on the custom 404 error page.</p>
+
+<h2 id="category-and-tag-index-pages">Category and tag index pages</h2>
+
+<p>Because we can not use external plugins for GitHub Pages we have to workaround this for category and tag pages.</p>
+
+<p>The solution is to create for each category or tag an empty file with empty frontmatter in the directory <code class="highlighter-rouge">/categories</code> respective <code class="highlighter-rouge">/tags</code>. The default layout for these files is configured in <code class="highlighter-rouge">_config.yml</code>. The layouts  are taking the category/tag value from the file name and rendering then the list of all posts for this category/tag.</p>
+
+<p>You should use only lowercase slugified keywords for your category and tag pages and also in your posts Front Matter. The labels for your categories are maintained in this file: <code class="highlighter-rouge">_data/labels.yml</code> - if you forgot to configure a label here then the category or tag name is used as the default in the Navigation and also on each post in the meta section - you will see it…</p>
+
+<p>To check, if you have forgotten to create a category or tag page you can use <a href="https://jekyllrb.com/docs/continuous-integration/travis-ci/#2-the-test-script">HTMLProofer</a>. It is always a good idea to check all you links…</p>
+
+<h2 id="atom-feed">Atom feed</h2>
+
+<p>Because of the fact we support multiple authors and subtitles the default feed from Jekyll was not enough. We wanted also to customize the number of posts included in the feed. You can configure this limit in the <code class="highlighter-rouge">_config.yml</code>.</p>
+
+<p>If you want to customize the feed feel free to edit the file <code class="highlighter-rouge">_layouts/feed.xml</code>. If you want to have a different name for your feed, then rename the file <code class="highlighter-rouge">/feed.md</code> and change in the <code class="highlighter-rouge">_layouts/default.html</code> the reference to your new feed name.</p>
+
+<h2 id="robotstxt-sitemapxml">robots.txt, sitemap.xml</h2>
+
+<p>The robots.txt file is pointing all robots to the sitemap.xml file, which includes per default all posts and the pages, which are shown on the sidebar.</p>
+
+<h2 id="custom-404-error-page-which-shows-the-post-archive">Custom 404 error page which shows the post archive</h2>
+
+<p>With Github Pages you have the possibility to deliver a custom 404 error page. We use it to show the user a nice error message and all available posts.</p>
+
+<h2 id="support-for-multiple-authors">Support for multiple authors</h2>
+
+<p>Per default the site owner is the author of all posts. In the <code class="highlighter-rouge">_config.yml</code> you have only the name of the site author - all the details are defined in <code class="highlighter-rouge">_data/authors.yml</code>. Here you can configure multiple authors.</p>
+
+<p>If one of your posts has a different or multiple authors simply define a <code class="highlighter-rouge">author</code> variable in the Front Matter with one or more authors like so:</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">My fancy blog post</span>
+<span class="na">author</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">ogobrecht</span><span class="pi">,</span> <span class="nv">madtsch</span><span class="pi">]</span> <span class="c1"># you can omit the array brackets for a single author</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<h2 id="support-for-subtitles">Support for subtitles</h2>
+
+<p>Short and creative post titles are nice. Unfortunately you need sometimes a small description to clarify what the post is about. Therefore we have the subtitles:</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">HydeBar</span>
+<span class="na">subtitle</span><span class="pi">:</span> <span class="s">A Jekyll Sidebar Template</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>The subtitle is shown in all post listings like on the home and archive page. It is also prepended to the post text in the feed.xml.</p>
+
+<h2 id="ui-localization---help-needed-for-more-languages">UI localization - help needed for more languages</h2>
+
+<p>The main reason to have a localization is for displaying dates in the right language format. You can find the language locales in <code class="highlighter-rouge">_data/locales/</code>. The second reason is dynamic text generation from the includes - the target is to get language specific text out of the includes without code modifications.</p>
+
+<p>Since we have now a localization we use it also on the delivered default pages - here as an example the complete index.md:</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Home</span>
+<span class="nn">---</span>
+{% include post-list-by-limit.html limit=5 %}
+
+{% include translation text='more_in_the' %}
+<span class="p">[</span><span class="nv">{% include translation text='archive' %}</span><span class="p">](</span><span class="sx">{{site.baseurl}}/archive</span><span class="p">)</span>,
+{% include translation text='subscribe_via' %}
+<span class="p">[</span><span class="nv">RSS</span><span class="p">](</span><span class="sx">{{site.baseurl}}/feed.xml</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>For the start we support English (en) and German (de). We need help for more languages - so, if someone finished the translation for his language please create a pull request or provide the language file via a new issue.</p>
+
+<h2 id="easy-toc-creation">Easy ToC creation</h2>
+
+<p>There are two ways to insert a table of contents. One is to do this with the <a href="https://kramdown.gettalong.org/converter/html.html#toc">documented way of the Markdown renderer kramdown</a>:</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gu">## Table of Contents</span>
+{:.no_toc}
+<span class="p">
+*</span> Will be replaced with the ToC, excluding the "Table of Contents" header
+{:toc}
+</code></pre></div></div>
+
+<p>The other way is to use the provided include:</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% include toc %}
+</code></pre></div></div>
+
+<p>With the include you can define your own header instead the localized default one:</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% include toc header="" %}
+</code></pre></div></div>
+
+<p>The header is omitted in the output if you provide a empty header variable - we use this here on the features page :-)</p>
+
+<h2 id="figure-captions-with-a-css-helper-class">Figure captions with a CSS helper class</h2>
+
+<p><strong><em>Real figure elements written in raw HTML</em></strong></p>
+
+<p>Markdown encourage you to use HTML when there is no easy Markdown syntax available - two examples:</p>
+
+<figure>
+  <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;figure</span> <span class="na">markdown=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+```js
+var example = "dummy string";
+```
+<span class="nt">&lt;figcaption&gt;</span>A real figure caption for a code snippet<span class="nt">&lt;/figcaption&gt;</span>
+<span class="nt">&lt;/figure&gt;</span>
+
+<span class="nt">&lt;figure</span> <span class="na">markdown=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;img</span>
+  <span class="na">src=</span><span class="s">"{{site.baseurl}}/assets/images/page-speed-desktop.png"</span>
+  <span class="na">alt=</span><span class="s">"Page Speed"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;figcaption&gt;</span>A real figure caption for an image<span class="nt">&lt;/figcaption&gt;</span>
+<span class="nt">&lt;/figure&gt;</span>
+</code></pre></div>  </div>
+  <figcaption>This is a real figure caption for a code snippet</figcaption>
+</figure>
+
+<figure>
+<img src="/A48S19/assets/images/page-speed-desktop.png" alt="Page Speed" />
+<figcaption>This is a real figure caption for an image</figcaption>
+</figure>
+
+<p><strong><em>Faked image and code captions</em></strong></p>
+
+<p>With the helper CSS class <code class="highlighter-rouge">.figcaption</code> or simply <code class="highlighter-rouge">.caption</code>. We use here the possibility to add attributes to elements - a functionality from the Markdown converter <a href="https://kramdown.gettalong.org/syntax.html#attribute-list-definitions">kramdown</a>. The resulting paragraph with the class <code class="highlighter-rouge">caption</code> has a negative <code class="highlighter-rouge">margin-top</code> and is therefore more aligned to the previous element. Like the real figures it has also a different text color and decoration as the main text:</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sb">```js
+var example = "dummy string";
+```</span>
+
+Faked figure caption for a code snippet
+{:.caption}
+
+<span class="p">![</span><span class="nv">Page Speed</span><span class="p">](</span><span class="sx">{{site.baseurl}}/assets/images/page-speed-mobile.png</span><span class="p">)</span>
+
+Faked figure caption for an image
+{:.caption}
+</code></pre></div></div>
+
+<p class="caption">This is a faked figure caption for a code snippet</p>
+
+<p><img src="/A48S19/assets/images/page-speed-mobile.png" alt="Page Speed" /></p>
+
+<p class="caption">This is a faked figure caption for an image</p>
+
+<p><strong><em>Conclusion</em></strong></p>
+
+<p>If you want to be more semantic correct then use real figures and the possibility to place Markdown inside your figure elements. If you are lazy then use the possibility to add a class to your caption paragraph.</p>
+
+<h2 id="more-css-helper-classes">More CSS helper classes</h2>
+
+<p>There are some more CSS helper classes defined which can be useful - here are a text snippet from the about page which uses two of them:</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">![</span><span class="nv">Avatar</span><span class="p">][</span><span class="ss">1</span><span class="p">]</span>{:.left.avatar} Hi, I am ...
+
+<span class="p">[</span><span class="ss">1</span><span class="p">]:</span> <span class="err">
+</span></code></pre></div></div>
+
+<p>here the corresponding CSS from the file <code class="highlighter-rouge">_sass/sidebar/_3-helper-classes.scss</code>:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.left</span> <span class="p">{</span>
+    <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0.3em</span> <span class="m">1em</span> <span class="m">0.3em</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.avatar</span> <span class="p">{</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="err">$</span><span class="n">base-border-radius</span> <span class="err">*</span> <span class="m">2</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">33%</span><span class="p">;</span>
+    <span class="nl">min-width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+    <span class="nl">max-width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>There are some more - the most interesting ones are probably these:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* width from 5%, 10%, 15% up to 100% in 20 steps */</span>
+<span class="nc">.width40</span> <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="m">40%</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.width75</span> <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="m">75%</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="c">/* height from 20px, 40px, 60px up to 400px in 20 steps */</span>
+<span class="nc">.height120</span> <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="m">120px</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.height360</span> <span class="p">{</span> <span class="nl">width</span><span class="p">:</span> <span class="m">360px</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="nc">.shadow</span> <span class="p">{</span> <span class="nl">box-shadow</span><span class="p">:</span> <span class="err">$</span><span class="n">box-shadow</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.noshadow</span> <span class="p">{</span> <span class="nl">box-shadow</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.nowrap</span> <span class="p">{</span> <span class="nl">white-space</span><span class="p">:</span> <span class="nb">nowrap</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>You can use this to easily apply width and height styles to images, figures and other elements.</p>
+
+<h2 id="disqus-comments">Disqus comments</h2>
+
+<p>The integration for Disqus comments is the original one from the base theme minima - it is documented <a href="https://github.com/jekyll/minima#enabling-comments-via-disqus">here</a> - you need only to provide your short name in <code class="highlighter-rouge">_config.yml</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">disqus</span><span class="pi">:</span>
+    <span class="na">shortname</span><span class="pi">:</span> <span class="s">my_disqus_shortname</span>
+</code></pre></div></div>
+
+<h2 id="google-analytics">Google Analytics</h2>
+
+<p>Like for Disqus the integration of Google Analytics is the original one from the base theme minima - it is documented <a href="https://github.com/jekyll/minima#enabling-google-analytics">here</a> - you need only to provide your key in <code class="highlighter-rouge">_config.yml</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">google_analytics</span><span class="pi">:</span> <span class="s">UA-NNNNNNNN-N</span>
+</code></pre></div></div>
+
+<h2 id="w3c-valid-output---fast-and-secure">W3C valid output - fast and secure</h2>
+
+<p>The links below are <strong>not</strong> working in your local development environment:</p>
+
+<ul>
+  <li>W3C’s Unified Validator: <a href="https://validator.w3.org/unicorn/check?ucn_task=conformance&amp;ucn_uri=http%3A%2F%2Flocalhost%3A4000%2FA48S19%2F&amp;ucn_lang=en">validate now</a></li>
+  <li>Google PageSpeed Insights: <a href="https://developers.google.com/speed/pagespeed/insights/?hl=de&amp;url=http%3A%2F%2Flocalhost%3A4000%2FA48S19%2F">check now</a></li>
+</ul>
+
+<p>And your site is secure by default, it is a static site!</p>
+
+
+  </div>
+</article>
+
+<!--content-end-->
+
+    </div>
+  </main>
+
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger" class="nav-button"><span class="nav-icon"></span></label>
+  <label for="nav-trigger" class="overlay"></label>
+
+  <div class="sidebar">
+    <div class="wrapper">
+      <header class="site-header">
+        <a class="site-title" href="/A48S19/">
+          <h2>CSCA48 Summer 2019</h2>
+          <p class="meta">Tutorial Notes</p>
+        </a>
+      </header>
+      <nav class="site-nav">
+
+<!--navigation-content-begin-->
+<ul>
+  <li><a href="/A48S19/W1/">Week 1</a></li>
+  <li><a href="/A48S19/W2/">Week 2</a></li>
+</ul>
+<!--navigation-content-end-->
+
+      </nav>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

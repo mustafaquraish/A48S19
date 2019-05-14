@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+<generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator>
+<link href="http://localhost:4000/A48S19/feed.xml" rel="self" type="application/atom+xml" />
+<link href="http://localhost:4000/A48S19/" rel="alternate" type="text/html" hreflang="en" />
+<updated>2019-05-14T13:22:26-04:00</updated>
+<id>http://localhost:4000/A48S19/</id>
+<title type="html">CSCA48 Summer 2019</title>
+<subtitle>Tutorial Notes</subtitle>
+<author>
+  <name></name>
+  <email></email>
+  <uri></uri>
+</author>
+
+<entry>
+<title type="html">Example Slideshow</title>
+<summary type="html">A basic example for the Reveal.js integration</summary>
+<link href="http://localhost:4000/A48S19/posts/2017-11-22-example-slideshow" rel="alternate" type="text/html" title="Example Slideshow" />
+<published>2017-11-22T00:00:00-05:00</published>
+<updated>2017-11-22T00:00:00-05:00</updated>
+<id>http://localhost:4000/A48S19/posts/example-slideshow</id>
+<author>
+  <name>Mustafa Quraish</name>
+  <email>mustafa.quraish@mail.utoronto.ca</email>
+  <uri>https://mustafaquraish.github.io</uri>
+</author>
+<author>
+  <name>Lucy Tishkina</name>
+  <email>lucy.tishkina@mail.utoronto.ca</email>
+  <uri>https://github.com/Lusura</uri>
+</author>
+<category term="features" label="Features" scheme="http://localhost:4000/A48S19/categories/" />
+<category term="reveal" label="Reveal.js" scheme="http://localhost:4000/A48S19/tags/" />
+<content type="html" xml:base="http://localhost:4000/A48S19/posts/2017-11-22-example-slideshow">
+&lt;p&gt;&lt;em&gt;A basic example for the Reveal.js integration&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;This post is an example to show you how to integrate an existing slideshow.&lt;/p&gt;
+
+&lt;p&gt;You call simply an include with the path to the slideshow:&lt;/p&gt;
+
+&lt;div class=&quot;language-liquid highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;slides&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/slides/2017-11-22-example-presentation&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;As a result you get all the necessary informations to start your slides - we do the include call right now:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/A48S19/slides/2017-11-22-example-presentation/&quot; target=&quot;_blank&quot;&gt;Open HTML presentation in a new window/tab&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;post-meta&quot;&gt;
+  &lt;p&gt;You need a modern browser with activated JavaScript. Navigation tips:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;code&gt;Space&lt;/code&gt; = Next slide&lt;/li&gt;
+    &lt;li&gt;&lt;code&gt;Shift&lt;/code&gt; + &lt;code&gt;Space&lt;/code&gt; = Previous slide&lt;/li&gt;
+    &lt;li&gt;&lt;code&gt;Esc&lt;/code&gt; = Overview all slides&lt;/li&gt;
+    &lt;li&gt;&lt;code&gt;?&lt;/code&gt; = Overview all keyboard shortcuts&lt;/li&gt;
+    &lt;li&gt;All links are opened in a new window/tab&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;/A48S19/slides/2017-11-22-example-presentation/slides.html&quot;&gt;Raw HTML Version with notes&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;/A48S19/slides/2017-11-22-example-presentation/slides.md&quot;&gt;Raw Markdown Version&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;p&gt;For more informations about the Reveal.js integration please see the features page &lt;a href=&quot;/A48S19/features#revealjs-slideshow-integration&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;For a bigger example you can also have a look at &lt;a href=&quot;/A48S19/posts/2017-11-05-dr-jekyll-and-mr-markdown-bloggen-fuer-entwickler&quot;&gt;this presentation&lt;/a&gt; from my colleague Markus Dötsch and me, which was shown by Markus on the &lt;a href=&quot;https://2017.doag.org/en/home/&quot;&gt;DOAG Conference + Exhibition 2017&lt;/a&gt; (in German, sorry…).&lt;/p&gt;
+
+&lt;p&gt;Happy presenting ;-)&lt;br /&gt;
+Ottmar&lt;/p&gt;
+</content>
+</entry>
+
+<entry>
+<title type="html">Markdown Basics</title>
+<summary type="html">Syntax for creating content</summary>
+<link href="http://localhost:4000/A48S19/posts/2017-11-19-markdown-basics" rel="alternate" type="text/html" title="Markdown Basics" />
+<published>2017-11-19T00:00:00-05:00</published>
+<updated>2017-11-19T00:00:00-05:00</updated>
+<id>http://localhost:4000/A48S19/posts/markdown-basics</id>
+<author>
+  <name>Mustafa Quraish</name>
+  <email>mustafa.quraish@mail.utoronto.ca</email>
+  <uri>https://mustafaquraish.github.io</uri>
+</author>
+<author>
+  <name>Lucy Tishkina</name>
+  <email>lucy.tishkina@mail.utoronto.ca</email>
+  <uri>https://github.com/Lusura</uri>
+</author>
+<category term="general" label="General" scheme="http://localhost:4000/A48S19/categories/" />
+<category term="markdown" label="Markdown" scheme="http://localhost:4000/A48S19/tags/" />
+<content type="html" xml:base="http://localhost:4000/A48S19/posts/2017-11-19-markdown-basics">
+&lt;p&gt;&lt;em&gt;Syntax for creating content&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Here are some basic syntax to create posts and pages. For the complete Markdown syntax see &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot;&gt;John Gruber’s original specification&lt;/a&gt; and the &lt;a href=&quot;https://kramdown.gettalong.org/quickref.html&quot;&gt;kramdown quick reference&lt;/a&gt; - kramdown is the Markdown renderer used by Jekyll and supports some Markdown extensions. For more details see the &lt;a href=&quot;https://kramdown.gettalong.org/syntax.html&quot;&gt;complete kramdown syntax&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Don’t use H1 headers in you posts and pages - every HTML page should have only one H1 header - and this H1 header is already occupied by your post or page title. As a best practice use only H2 and H3 headers - everything else is too deep. If you need such deep levels consider to split your post in multiple parts.&lt;/p&gt;
+
+&lt;div class=&quot;language-md highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;gu&quot;&gt;## H2 Header&lt;/span&gt;
+
+&lt;span class=&quot;gu&quot;&gt;### H3 Header&lt;/span&gt;
+
+A paragraph with &lt;span class=&quot;ge&quot;&gt;*emphasized text*&lt;/span&gt;, &lt;span class=&quot;gs&quot;&gt;**bold text**&lt;/span&gt;, &lt;span class=&quot;gs&quot;&gt;***emphasized and bold**&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;*&lt;/span&gt;.
+As an alternative for the star you can use the _underscore_. Text could also be
+marked as ~~strikethrough~~ with two tildes.
+&lt;span class=&quot;p&quot;&gt;
+*&lt;/span&gt; An unordered list item
+&lt;span class=&quot;p&quot;&gt;  -&lt;/span&gt; Could also start with a minus sign
+&lt;span class=&quot;p&quot;&gt;  +&lt;/span&gt; Or a plus sign
+&lt;span class=&quot;p&quot;&gt;*&lt;/span&gt; An inline style link: &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Jekyll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;https://jekyllrb.com/&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;&quot;With a title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
+&lt;span class=&quot;p&quot;&gt;*&lt;/span&gt; A reference style link: &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Markdown Syntax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;
+1.&lt;/span&gt; An ordered list item
+&lt;span class=&quot;p&quot;&gt;1.&lt;/span&gt; Another one
+&lt;span class=&quot;p&quot;&gt;  -&lt;/span&gt; Unordered sub item
+&lt;span class=&quot;p&quot;&gt;1.&lt;/span&gt; You don't need correct numbers
+&lt;span class=&quot;p&quot;&gt;1.&lt;/span&gt; In the rendered HTML the numbers are correct
+&lt;span class=&quot;gt&quot;&gt;
+&amp;gt; A block quote&lt;/span&gt;
+&lt;span class=&quot;gt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;gt&quot;&gt;&amp;gt; &amp;gt; Nesting is possible&lt;/span&gt;
+&lt;span class=&quot;gt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;gt&quot;&gt;&amp;gt; &amp;gt; &amp;gt; Even multiple levels&lt;/span&gt;
+&lt;span class=&quot;gt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;gt&quot;&gt;&amp;gt; Back to base level&lt;/span&gt;
+
+A picture with an optional image title:
+
+&lt;span class=&quot;p&quot;&gt;![&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Google PageSpeed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;sx&quot;&gt;/A48S19/assets/images/page-speed-mobile.png&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;&quot;Image title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+Some source code:
+&lt;span class=&quot;p&quot;&gt;```&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;js&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;example&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;dummy JavaScript code&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;```&lt;/span&gt;
+
+A horizontal row:
+&lt;span class=&quot;p&quot;&gt;
+---
+&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt; &lt;span class=&quot;sx&quot;&gt;https://daringfireball.net/projects/markdown/syntax&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Result:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;h2-header&quot;&gt;H2 Header&lt;/h2&gt;
+
+&lt;h3 id=&quot;h3-header&quot;&gt;H3 Header&lt;/h3&gt;
+
+&lt;p&gt;A paragraph with &lt;em&gt;emphasized text&lt;/em&gt;, &lt;strong&gt;bold text&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;emphasized and bold&lt;/em&gt;&lt;/strong&gt;.
+As an alternative for the star you can use the &lt;em&gt;underscore&lt;/em&gt;. Text could also be
+marked as &lt;del&gt;strikethrough&lt;/del&gt; with two tildes.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;An unordered list item
+    &lt;ul&gt;
+      &lt;li&gt;Could also start with a minus sign&lt;/li&gt;
+      &lt;li&gt;Or a plus sign&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;An inline style link: &lt;a href=&quot;https://jekyllrb.com/&quot; title=&quot;With a title&quot;&gt;Jekyll&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;A reference style link: &lt;a href=&quot;https://daringfireball.net/projects/markdown/syntax&quot;&gt;Markdown Syntax&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;An ordered list item&lt;/li&gt;
+  &lt;li&gt;Another one
+    &lt;ul&gt;
+      &lt;li&gt;Unordered sub item&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;You don’t need correct numbers&lt;/li&gt;
+  &lt;li&gt;In the rendered HTML the numbers are correct&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A block quote&lt;/p&gt;
+
+  &lt;blockquote&gt;
+    &lt;p&gt;Nesting is possible&lt;/p&gt;
+  &lt;/blockquote&gt;
+
+  &lt;blockquote&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;Even multiple levels&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/blockquote&gt;
+
+  &lt;p&gt;Back to base level&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A picture with an optional image title:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/A48S19/assets/images/page-speed-mobile.png&quot; alt=&quot;Google PageSpeed&quot; title=&quot;Image title&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Some source code:&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;example&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;dummy JavaScript code&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;A horizontal row:&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Still reading? Congratulations: You know now the syntax for 80 percent of the normal content creation. Feels natural or what do you think?&lt;/p&gt;
+
+&lt;p&gt;Happy writing ;-)&lt;br /&gt;
+Ottmar&lt;/p&gt;
+</content>
+</entry>
+
+<entry xml:lang="de">
+<title type="html">Dr. Jekyll and Mr. Markdown - Bloggen für Entwickler</title>
+<summary type="html">DOAG Konferenz 2017, Nürnberg</summary>
+<link href="http://localhost:4000/A48S19/posts/2017-11-05-dr-jekyll-and-mr-markdown-bloggen-fuer-entwickler" rel="alternate" type="text/html" title="Dr. Jekyll and Mr. Markdown - Bloggen für Entwickler" />
+<published>2017-11-05T00:00:00-04:00</published>
+<updated>2017-11-22T00:00:00-05:00</updated>
+<id>http://localhost:4000/A48S19/posts/dr-jekyll-and-mr-markdown-bloggen-fuer-entwickler</id>
+<author>
+  <name></name>
+</author>
+<author>
+  <name></name>
+</author>
+<category term="slides" label="Slides" scheme="http://localhost:4000/A48S19/categories/" />
+<category term="jekyll" label="Jekyll" scheme="http://localhost:4000/A48S19/tags/" />
+<category term="markdown" label="Markdown" scheme="http://localhost:4000/A48S19/tags/" />
+<content type="html" xml:base="http://localhost:4000/A48S19/posts/2017-11-05-dr-jekyll-and-mr-markdown-bloggen-fuer-entwickler">
+&lt;p&gt;&lt;em&gt;DOAG Konferenz 2017, Nürnberg&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Die Folien zu unserem Vortrag:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/A48S19/slides/2017-11-22-dr-jekyll-and-mr-markdown-bloggen-fuer-entwickler/&quot; target=&quot;_blank&quot;&gt;HTML-Präsentation in einem neuen Fenster/Tab starten&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;post-meta&quot;&gt;
+  &lt;p&gt;Es wird ein moderner Browser mit aktiviertem JavaScript benötigt. Tips zur Navigation:&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;code&gt;Space&lt;/code&gt; = Nächste Folie&lt;/li&gt;
+    &lt;li&gt;&lt;code&gt;Shift&lt;/code&gt; + &lt;code&gt;Space&lt;/code&gt; = Vorherige Folie&lt;/li&gt;
+    &lt;li&gt;&lt;code&gt;Esc&lt;/code&gt; = Übersicht aller Folien&lt;/li&gt;
+    &lt;li&gt;&lt;code&gt;?&lt;/code&gt; = Übersicht aller Tastaturkürzel&lt;/li&gt;
+    &lt;li&gt;Alle enthaltenen Links werden in einem neuen Fenster/Tab geöffnet&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;/A48S19/slides/2017-11-22-dr-jekyll-and-mr-markdown-bloggen-fuer-entwickler/slides.html&quot;&gt;Rohe HTML Version mit Anmerkungen&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;/A48S19/slides/2017-11-22-dr-jekyll-and-mr-markdown-bloggen-fuer-entwickler/slides.md&quot;&gt;Rohe Markdown Version&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Kurzdarstellung:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Wenn man sich schon Notizen macht, um das Eine oder Andere zu dokumentieren, warum nicht gleich richtig? So, dass auch andere etwas davon haben. Wer hat nicht schon von den Blogs anderer profitiert? Man muß sich für den Start nicht unbedingt mit Webhosting und WordPress &amp;amp; Co. herumschlagen - und auch kein Geld investieren. Stattdessen kann man auf die gewohnten Werkzeuge eines Entwicklers zurückgreifen und mit dem Editor seiner Wahl Textdateien im einfach zu schreibenden Markdown Format erstellen. Die Konvertierung in ein Blog mit allem Drum und Dran übernimmt dann der statische Website Generator Jekyll, ein Ruby-Skript. Und ein so erstelltes Blog ist rasend schnell und besonders sicher. Kombiniert mit einem kostenfreien Github-Account werden die HTML-Seiten beim Check-in in das Versionskontrollsystem erstellt und stehen sofort online zur Verfügung.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Der Vortrag führt in die Erstellung eines Blogs mit Jekyll ein und zeigt die einfach nutzbare Template-Engine, mit der man die fertig erhältlichen Themes erweitern kann. Als Beispiel implementieren wir eine integrierte HTML5 Slideshow mit Reveal.js - natürlich ist das dann auch die Technik, mit der der Vortrag gehalten wird :-)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Um den Bogen zurück zu Oracle zu schlagen wird zum Abschluss eine ähnlich einfach zu nutzende Template-Engine für PL/SQL gezeigt, mit der man das Eine oder Andere besser lösen kann als mit Replace-Verkettungen.&lt;/em&gt;&lt;/p&gt;
+</content>
+</entry>
+
+<entry>
+<title type="html">Hello World</title>
+<summary type="html">HydeBar, a Jekyll sidebar template with Reveal.js integration</summary>
+<link href="http://localhost:4000/A48S19/posts/2017-11-04-hello-world" rel="alternate" type="text/html" title="Hello World" />
+<published>2017-11-04T00:00:00-04:00</published>
+<updated>2017-11-04T00:00:00-04:00</updated>
+<id>http://localhost:4000/A48S19/posts/hello-world</id>
+<author>
+  <name>Mustafa Quraish</name>
+  <email>mustafa.quraish@mail.utoronto.ca</email>
+  <uri>https://mustafaquraish.github.io</uri>
+</author>
+<author>
+  <name>Lucy Tishkina</name>
+  <email>lucy.tishkina@mail.utoronto.ca</email>
+  <uri>https://github.com/Lusura</uri>
+</author>
+<category term="general" label="General" scheme="http://localhost:4000/A48S19/categories/" />
+<content type="html" xml:base="http://localhost:4000/A48S19/posts/2017-11-04-hello-world">
+&lt;p&gt;&lt;em&gt;HydeBar, a Jekyll sidebar template with Reveal.js integration&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;This is the first blog post. Edit or delete it - as you like :-)&lt;/p&gt;
+</content>
+</entry>
+
+
+</feed>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>http://localhost:4000/W1/</loc></url>
-<url><loc>http://localhost:4000/W2/</loc></url>
-<url><loc>http://localhost:4000/posts/2017-11-22-example-slideshow</loc></url>
-<url><loc>http://localhost:4000/posts/2017-11-19-markdown-basics</loc></url>
-<url><loc>http://localhost:4000/posts/2017-11-05-dr-jekyll-and-mr-markdown-bloggen-fuer-entwickler</loc></url>
-<url><loc>http://localhost:4000/posts/2017-11-04-hello-world</loc></url>
-</urlset>

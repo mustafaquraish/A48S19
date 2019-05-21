@@ -56,7 +56,7 @@ After you're done with this, draw out the memory model on a piece of paper and t
 
 > ### This is important!
 >
-> Understanding how arrays work properly is going to be something that will be useful to you for the rest of your programming career in C, and help you avoid a lot of common mistakes.
+> Understanding how arrays work properly is going to be something that will be useful to you for the rest of your programming career in C, and can help you avoid a lot of common mistakes.
 
 Make sure you run your code when you're done to check if it's working correctly!
 
@@ -69,7 +69,7 @@ Now, do the same exercise as above, except using pointers instead of array notat
 Remember this pointer notation:
 - Getting the address of something is done by using the `&` operator, as in `&array[5]` gets the address of the 6<sup>th</sup> entry in `array`.
 - Accessing information using a pointer is done with the `*` operator, as in `*(p)` is accessing the location whose address is in `p`.
-- We can replace `(p)` with expressions that modify the address, like `*(p+3)` gets the location whose address is whatever is in `p + 3`
+- We can replace `(p)` with expressions that modify the address, like `*(p+3)` is accessing the location whose address is `p + 3`
 
 Once you're done with this, make sure you can answer the following questions:
 - How would these programs be different if you traced the memory model?
@@ -144,3 +144,6 @@ void replaceSubstring(char *str, char *a, char *b) {
  return;
 }
 ```
+
+---
+[Slideshow version](slides/)

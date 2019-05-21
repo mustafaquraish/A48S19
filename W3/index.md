@@ -130,17 +130,17 @@ As an exercise, for the following functions, which of the parameters should have
 ```c
 void replaceSubstring(char *str, char *a, char *b) {
   /* If 'a' is a substring of 'str', then the corresponding 
-    section of 'str' is replaced with 'b'.
+   * section of 'str' is replaced with 'b'.
+   *
+   * For example:
+   *
+   *       char str[50] = "Hello World!";
+   *       replaceSubstring(str, "llo W", "---");
+   *       printf("%s\n", str);
+   *
+   * should print out "He---orld!"
+   */
 
-    For example:
-
-    char str[50] = "Hello World!";
-    replaceSubstring(str, "llo W", "---");
-    printf("%s\n", str);
-
-    should print out "He---orld!"
-  */
-
-
+ return;
 }
 ```

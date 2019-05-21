@@ -77,12 +77,70 @@ Once you're done with this, make sure you can answer the following questions:
 - In this case, or in general, should you be using pointers or arrays? Why?
 
 ---
-### Some technical issues
+### **Some technical issues**
 
 - The `sin()` and `cos()` functions are part of the math library, which are not available to you by default. You need to include the library using `#include<math.h>` to be able to use them.
 
 - When compiling your code with the math library included, you need to add the `-lm` flag. This tells the compiler to **l**ink the **m**ath library, which means it will find and include it when compiling your program. For example, instead of `gcc file.c`, we would now compile with `gcc file.c -lm`. Without this, you may get an error.
 
 
-> The math library is one of the most used ones available, with a host of different functions and constants you can use! You should look up what else is available to use, it may be helpful to you when programming in C - there's no need to reinvent the wheel.
+The math library is one of the most used ones available, with a host of different functions and constants you can use! You should look up what else is available to use, it may be helpful to you when programming in C - there's no need to reinvent the wheel.
 
+---
+## The const modifier
+---
+
+Passing an array or a pointer to an array to a function gives the it full power to change data in that array. What if we want to give a function access to the contents of the array, but not let it modify the data?
+
+This is where the `const` modifier comes in. We use it in a variable declaration to say that this variable cannot be modified. For instance, if we use the example in the exercises above, we would declare the function `computeSineCosine` as follows:
+
+```c
+void computeSineCosine(const float array[10], ... ) { ... }
+```
+
+
+This declaration says that `array` is going to be treated as a constant inside the function - this means the function's code **will not be allowed** to change its contents *(by the compiler!)*. 
+
+This ensures that we can pass an array to a function without worrying about it being changed. It's similar to the idea of immutable data in Python, except here we control exactly what is treated as a `const`, and what is not.
+
+- Would it make sense to declare the `sin_theta` and `cos_theta` parameters using `const`? Why / Why not?
+
+---
+
+You may have seen the `const` modifier before if you were looking at functions in the string library `string.h`. It is used there often to ensure that the strings you are working on are not modified when you don't expect them to be.
+
+As an exercise, for the following functions, which of the parameters should have a `const` modifier? Why?
+
+- `strcpy(string A, string B)`
+- `strcat(string A, string B)`
+- `strlen(string A)`
+
+---
+## Additional exercises
+---
+
+1. Write a function `countOccurences()` that takes in a string as input, and counts the number of times each character appears in it. Think carefully about how you would return the result.
+
+2. Write a function `stringConcatenate()` that takes in 2 strings, and concatenates the 2<sup>nd</sup> string at the end of the 1<sup>st</sup> one. Do this using both arrays and pointers, and without using the `string.h` library.
+
+3. Write a function `isSubstring()` that takes in 2 strings, and returns `1` if the 1<sup>st</sup> string is a substring of the 2<sup>nd</sup> one, and `0` otherwise.
+
+4. Complete the following function:
+
+```c
+void replaceSubstring(char *str, char *a, char *b) {
+  /* If 'a' is a substring of 'str', then the corresponding 
+    section of 'str' is replaced with 'b'.
+
+    For example:
+
+    char str[50] = "Hello World!";
+    replaceSubstring(str, "llo W", "---");
+    printf("%s\n", str);
+
+    should print out "He---orld!"
+  */
+
+
+}
+```

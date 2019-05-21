@@ -16,7 +16,7 @@ Using only *array notation* (no pointers for now), complete the following code a
 
 ```c
 #include<stdio.h>
-#include<math.h>    // This imports the functions from the math library
+#include<math.h>    // This imports the math library
 
 // Complete the function prototype. What are the parameters needed?
 void computeSineCosine( ... parameters ... ) {

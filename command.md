@@ -19,7 +19,7 @@ Once you start your second year courses, you will be expected to be using the co
 
 ---
 
-## What command line should I use?
+## What terminal should I use?
 ---
 ### Windows
 

@@ -1,6 +1,6 @@
 ---
 title: Using the Command Line
-sidebar: 15
+sidebar-legal: 15
 sidebar-title: Command Line
 ---
 
@@ -11,7 +11,7 @@ sidebar-title: Command Line
 ---
 ## What is the command line, and why should I use it?
 ---
-The command line (also called terminal) is an interface where you can directly execute commands on your computer. It allows you to traverse through all your directories, change settings, run files, [watch movies](https://www.instructables.com/id/How-to-Watch-Star-Wars-in-Terminal/) and the list goes on!
+The command line (also called terminal) is an interface where you can directly execute commands on your computer. It allows you to traverse through all your directories, change settings, run programs, [watch movies](https://www.instructables.com/id/How-to-Watch-Star-Wars-in-Terminal/) and the list goes on!
 
 As a computer science student, this is going to be an invaluable resource to you. Though it takes some time to get used to the commands, with some practice it offers you more power and speed than a user interface can offer. More importantly, we need it to compile our C code properly.
 

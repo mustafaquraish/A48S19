@@ -8,7 +8,7 @@ sidebar-title: Week 4
 ## Representing Data in memory
 ---
 
-This week we'll be talk about how the data we work with in our programs is stored in memory. This is something that is important to understand, as it helps us better understand and avoid a lot of problems that we may not realize we are making. 
+This week we'll be talking about how the data we work with in our programs is stored in memory. This is something that is important to understand, as it helps us better understand and avoid a lot of mistakes that we may not realize we are making. 
 
 It also helps us begin to understand how complex it is for a computer to actually be operating. You will learn a lot more about this in your Computer Organization course (CSCB58) and Systems Programming (CSCB09) courses, however, understanding the basics here will help you become a better C programmer.
 
@@ -47,7 +47,7 @@ Here's the first few (non-negative) integers represented in binary:
     4                    0100                           
 ```
 
-Now, generalize this pattern, and write down the binary representation of all of the numbers on a piece of paper to make sure you understand how this works.
+Now, generalize this pattern, and write down the binary representation of all of the numbers up to 15 on a piece of paper to make sure you understand how this works.
 
 Larger numbers work the same way, we just use more bits. You'll talk more about this in CSCB58, as well as how to deal with negative numbers. You don't have to worry about it for now.
 
@@ -87,7 +87,7 @@ enough for standard text!
 
 Floating point numbers are much harder to store, we need to come up with a clever way to do this consistently, since we can have numbers that are very big, and also numbers that are very small. 
 
-> What do you this is a good way to do this? (Hint: you have seen something like this before!)
+> What do you think is a good way to do this? (Hint: you have seen something like this before!)
 
 We will use scientific notation! Consider the case where we are trying to store the number `3.141592` in memory. 
 
@@ -112,12 +112,81 @@ We will start by looking at grayscale (black and white) images. The thing to not
 
 For a grayscale image, each pixel has a brightness value between 0 (black) and 255 (white). Values in between both of these numbers are varying shades of gray, from almost black to almost white.
 
-Now, 
+Now, to encode this in binary, we use 1-byte to store the information. 
+
+>How do you think we could extend this idea to encode a colour image?
+
+For colour images, we have a triplet of values for each pixel to store the brightness value for the three colours R, G and B. Now each pixel uses 3 bytes to encode the colour data. 
 
 
 ---
+## Sound Recordings
+---
+Sound has different properties that we can encode as numbers in various ways, which can be stored in binary. As an example, we can store sound volume as a floating point number from -1 to +1 or as an integer from -127 to 127. Both of these encoding can be stored in binary format on the computer.
 
+---
+## Computer Code
+---
+Computer code is first converted into CPU instructions. Let's look at an example:
 
+```
+C instruction  CPU Instruction  Translation
+                (in MIPS 32)                
+------------------------------------------------------------------
+x=x+1;         LW $t1,x          load value of x into register t1
+               ADDI $t1,$t1,1    add 1 to the value in register t1
+                                 and store result in register t1
+               SW $t1,x          store the resulting value back in
+                                 the locker where x is stored
+
+```
+
+So we can encode the different pieces of each CPU instruction. Each instruction has a unique id, which is an integer that we can encode in binary. Each CPU register has a unique integer id, which we can also store in binary. The arguments can also be stored in binary since they are either numbers (remember even chars are stored as number) or pointers which are memory addresses that are also numbers.
+
+Here is an example of how the encoding would work:
+```
+     ADDI               $t1           $t1            1
+ Instruction ID      Register ID    Register ID    Argument
+
+      05                01             01            1
+ In bits:
+      1001              001            001          001
+```
+---
+
+Some things to think about:
+> If we know that everything is stored as bits in memory, can we figure out what some bits in memory are supposed to represent?
+
+>What do you think this will do?
+
+```c
+ #include<stdio.h>
+ #include<stdlib.h>
+ int main()
+ {
+    char  stringy[7]="Logic!";
+    char *c;
+    int *i;
+    float *f;
+
+    printf("My string says: %s\n",stringy);
+
+    // Let's get a pointer to the string!
+    c=&stringy[0];
+    i=&stringy[0];
+    f=&stringy[0];
+
+    printf("Wait a sec, is it really a string?\n");
+    printf("I think it may be a char! %c\n",*c);
+    printf("Or perhaps it's an int??? %d\n",*i);
+    printf("Or maybe a float?? %f\n",*f);
+
+    printf("This gets really weird!\n");
+    *i=1768382797;
+    printf("My string says: %s\n",stringy);
+    printf("What just happened!!!????\n");
+ }
+ ```
 
 
 [Slideshow version](slides/)

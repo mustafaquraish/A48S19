@@ -110,83 +110,104 @@ Typically, 32 bits (4 bytes) are used for a `float`, and 64 bits (8 bytes) are u
 
 We will start by looking at grayscale (black and white) images. The thing to note here is that every image is made of pixels. 
 
-For a grayscale image, each pixel has a brightness value between 0 (black) and 255 (white). Values in between both of these numbers are varying shades of gray, from almost black to almost white.
+> How would you encode and store a grayscale image in memory?
 
-Now, to encode this in binary, we use 1-byte to store the information. 
+For a grayscale image, each pixel has a brightness value between 0 (black) and 255 (white). Values in between both of these numbers are varying shades of gray, from almost black to almost white. We already know that we can store values from 0-255 in one byte, so we're going to need one byte per pixel.
 
->How do you think we could extend this idea to encode a colour image?
+Now, the question is, how do we store all the pixels in the image (which is 2-dimensional) into a string of bits (which is one dimensional). A common approach is to first store all the pixels in the first row, then all the pixels in the second row, etc. (This is called *row-major* order). 
 
-For colour images, we have a triplet of values for each pixel to store the brightness value for the three colours R, G and B. Now each pixel uses 3 bytes to encode the colour data. 
+You will see more of this on A1, where you'll be working with `.pgm` images, which use exactly this format to store the images!
 
+> How would you now extend this idea to encode a colour image?
+
+Every colour in an image can be made using some combination of the colours *Red*, *Green* and *Blue* (often called RGB). Now, for each pixel, insteading of storing one single value, we store a triplet of values, indicating the amount of R, G and B. Each of these values will range from 0-255, as before. Each pixel will now have 3 bytes of data. We store the triples in a similar way as the single values for grayscale.
 
 ---
 ## Sound Recordings
 ---
-Sound has different properties that we can encode as numbers in various ways, which can be stored in binary. As an example, we can store sound volume as a floating point number from -1 to +1 or as an integer from -127 to 127. Both of these encoding can be stored in binary format on the computer.
+
+Now, lets try thinking of types of data that are harder to encode.
+
+> How would you encode a sound recording in memory?
+
+Sounds can be represented in many different ways on a computer. One way of doing it is storing the frequency (pitch) and amplitude (volume) of the sound at different points in time consecutively. If we have enough of these close to each other, it sounds like a continuous stream of audio! Each of these values can be encoded as floating point numbers (between -1 and 1) or integers (between 0 to 255, or -128 to 127) and then encoded as bits.
+
+There are a lot more complex methods of encoding audio that are beyond the scope of what we are trying to cover right now, but it boils down to a similar principle at the end of the day. We can represent most things using an appropriate sequence of numbers (or equivalently, bits)!
 
 ---
 ## Computer Code
 ---
-Computer code is first converted into CPU instructions. Let's look at an example:
+
+When we compile our C code, it is turned into CPU instructions. There are very simple instructions that tell the CPU exactly what it's supposed to be doing at any time. Lets look at a simple example (It's ok if you don't fully understand this!)
 
 ```
-C instruction  CPU Instruction  Translation
-                (in MIPS 32)                
-------------------------------------------------------------------
-x=x+1;         LW $t1,x          load value of x into register t1
-               ADDI $t1,$t1,1    add 1 to the value in register t1
-                                 and store result in register t1
-               SW $t1,x          store the resulting value back in
-                                 the locker where x is stored
-
+  C instruction       CPU Instruction (in MIPS 32)   
+----------------------------------------------------
+     x=x+1;              LW $t1,x          (1)
+   
+                         ADDI $t1,$t1,1    (2)
+                                         
+                         SW $t1,x          (3)
 ```
+*(Note: MIPS 32 is a set of CPU instructions - you'll learn more about it in CSCB58!)*
 
-So we can encode the different pieces of each CPU instruction. Each instruction has a unique id, which is an integer that we can encode in binary. Each CPU register has a unique integer id, which we can also store in binary. The arguments can also be stored in binary since they are either numbers (remember even chars are stored as number) or pointers which are memory addresses that are also numbers.
+Let's look at what each instruction here means:
+1. `LW` is used to *load* information. We're loading the value of `x` into the CPU's memory (a register) called `t1` so we can manipulate it.
+2. `ADDI` is used for addition. This line tells the CPU to add `1` to the value in the register `t1`.
+3. `SW` is used to *store* information. We're saving the new value in the register `t1` back into the locker for `x`.
+
+Now, we can encode the different pieces of each CPU instruction. 
+- Each instruction has a unique integer ID, which we can encode in binary. 
+- Each CPU register also has a unique integer ID.
+- The arguments can also be stored in binary since they are either numbers (remember even characters are stored as numbers) or pointers (which are memory addresses, and also just numbers).
 
 Here is an example of how the encoding would work:
 ```
      ADDI               $t1           $t1            1
- Instruction ID      Register ID    Register ID    Argument
 
+--------------------------------------------------------------
+ Instruction ID      Register ID    Register ID    Argument
       05                01             01            1
- In bits:
-      1001              001            001          001
+ 
+-------------------------- In bits ---------------------------
+     0101              0001           0001          0001
 ```
+
+Once again, the point of this example is to illustrate that we can store very complex data in memory by being smart about how we choose to encode it. It's ok to be a little lost here - you will learn all of this in depth in your upper year courses. 
+
+---
+## Having some fun!
 ---
 
-Some things to think about:
-> If we know that everything is stored as bits in memory, can we figure out what some bits in memory are supposed to represent?
-
->What do you think this will do?
+Knowing what we just learned, try and figure out what this code does:
 
 ```c
- #include<stdio.h>
- #include<stdlib.h>
- int main()
- {
-    char  stringy[7]="Logic!";
-    char *c;
-    int *i;
-    float *f;
+#include<stdio.h>
+#include<stdlib.h>
 
-    printf("My string says: %s\n",stringy);
+int main() {
+  char stringy[7] = "Logic!";
+  char *c;
+  int *i;
+  float *f;
 
-    // Let's get a pointer to the string!
-    c=&stringy[0];
-    i=&stringy[0];
-    f=&stringy[0];
+  printf("My string says: %s\n",stringy);
 
-    printf("Wait a sec, is it really a string?\n");
-    printf("I think it may be a char! %c\n",*c);
-    printf("Or perhaps it's an int??? %d\n",*i);
-    printf("Or maybe a float?? %f\n",*f);
+  // Let's get a pointer to the string!
+  c=&stringy[0];
+  i=&stringy[0];
+  f=&stringy[0];
 
-    printf("This gets really weird!\n");
-    *i=1768382797;
-    printf("My string says: %s\n",stringy);
-    printf("What just happened!!!????\n");
+  printf("Wait a sec, is it really a string?\n");
+  printf("I think it may be a char! %c\n",*c);
+  printf("Or perhaps it's an int??? %d\n",*i);
+  printf("Or maybe a float?? %f\n",*f);
+
+  printf("This gets really weird!\n");
+  *i=1768382797;
+  printf("My string says: %s\n",stringy);
+  printf("What just happened!!!????\n");
  }
  ```
 
-
-[Slideshow version](slides/)
+ Why does the code do this?

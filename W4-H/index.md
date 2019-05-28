@@ -85,13 +85,13 @@ enough for standard text!
 ## Floating Point Numbers
 ---
 
-Floating point numbers are much harder to store, we need to come up with a clever way to do this consistently, since we can have numbers that are very big, and also numbers that are very small. 
+Floating point numbers are much harder to store. We need to come up with a clever way to do this consistently, since we can have numbers that are very big, and also numbers that are very small. 
 
 > What do you think is a good way to do this? (Hint: you have seen something like this before!)
 
 We will use scientific notation! Consider the case where we are trying to store the number `3.141592` in memory. 
 
-- First writing it in the form `.3141592 * 10^1` (so that the first non-zero digit is immediately to the right of the decimal point)
+- First write it in the form `.3141592 * 10^1` (so that the first non-zero digit is immediately to the right of the decimal point)
 - Now, we can separately convert `3141592` (as an integer) and `1` (which is the power of 10) to binary, and store them as bits.
 - `3141592` here is called the 'mantissa' and `1` is called the 'exponent'
 
@@ -130,7 +130,7 @@ Now, lets try thinking of types of data that are harder to encode.
 
 > How would you encode a sound recording in memory?
 
-Sounds can be represented in many different ways on a computer. One way of doing it is storing the frequency (pitch) and amplitude (volume) of the sound at different points in time consecutively. If we have enough of these close to each other, it sounds like a continuous stream of audio! Each of these values can be encoded as floating point numbers (between -1 and 1) or integers (between 0 to 255, or -128 to 127) and then encoded as bits.
+Sounds can be represented in many different ways on a computer. One way of doing it is storing the frequency (pitch) and amplitude (volume) of the sound at different points in time consecutively. If we have enough of these close to each other, it sounds like a continuous stream of audio! Each of these values can be encoded as floating point numbers (between -1 and 1) or integers (between 0 to 255, or -127 to 127) and then encoded as bits.
 
 There are a lot more complex methods of encoding audio that are beyond the scope of what we are trying to cover right now, but it boils down to a similar principle at the end of the day. We can represent most things using an appropriate sequence of numbers (or equivalently, bits)!
 
@@ -138,11 +138,11 @@ There are a lot more complex methods of encoding audio that are beyond the scope
 ## Computer Code
 ---
 
-When we compile our C code, it is turned into CPU instructions. There are very simple instructions that tell the CPU exactly what it's supposed to be doing at any time. Lets look at a simple example (It's ok if you don't fully understand this!)
+When we compile our C code, it is turned into CPU instructions. These are very simple instructions that tell the CPU exactly what it's supposed to be doing at any time. Lets look at a simple example (It's ok if you don't fully understand this!)
 
-```
-  C instruction       CPU Instruction (in MIPS 32)   
-----------------------------------------------------
+```python
+  C instruction       CPU Instruction (MIPS 32)   
+--------------------------------------------------
      x=x+1;              LW $t1,x          (1)
    
                          ADDI $t1,$t1,1    (2)
@@ -211,3 +211,6 @@ int main() {
  ```
 
  Why does the code do this?
+ 
+ ---
+[Slideshow version](slides/)

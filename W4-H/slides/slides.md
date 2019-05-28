@@ -1,205 +1,388 @@
 <!-- {% raw %} -->
 
-# Week 3 Tutorial 
+# Week 4 Tutorial
+
+-----
+
+## Representing Data in memory
+
+---
+
+- This week we'll be talking about how the data we work with in our programs is stored in memory. 
+
+- This is something that is important to understand, as it helps us better understand and avoid a lot of mistakes that we may not realize we are making. 
+
+- You will learn a lot more about this in your Computer Organization course (CSCB58) and Systems Programming (CSCB09) courses, however, understanding the basics here will help you become a better C programmer.
+
+---
+
+Before we go any further, take a moment and ask yourself:
+ - How do you think information is stored in memory? 
+
+---
+
+- Everything in a computer is stored as bits. 
+
+- A bit *(short for binary digit)* is the smallest unit of data in computers - which can have the value of either `0` or `1`. 
+
+- This is because bits are really convenient to represent in a lot of ways.
+
+---
+
+Here's some examples:
+
+- Electric signals (on / off)
+- Voltage values (high / low)
+- Magnetic orientation (north / south)
+- Holes in a CD (present / absent)
+
+This allows us to make a variety of different digital storage devices using very different technology as long as we can somehow represent bits on them!
+
+---
+
+You might think that this seems very limiting - since each bit can only store one of 2 possible values. So, the question you should be asking yourself is:
+- What sort of data can we represent using these bits? (or rather, what can we *not* encode?)
+
+---
+
+- Using a sufficiently long string of bits, and some clever encoding, we can represent **anything!** 
+
+- The only thing we need to figure out here is that for any type information, how do we come up with a way to *uniquely* represent each value or data we need to using only bits.
+
+---
+
+Let's look at how come common data types are represented in binary!
+
+-----
+
+## Decimal numbers (integers)
+
+---
+
+> How do you think integers are stored in memory?
+
+---
+
+Here's the first few (non-negative) integers represented in binary:
+
+```c
+                  value                  bits                 
+                -------------------------------
+                    0                    0000
+                    1                    0001
+                    2                    0010
+                    3                    0011
+                    4                    0100
+```
+
+- Now, generalize this pattern, and write down the binary representation of all of the numbers up to 15 on a piece of paper to make sure you understand how this works.
+
+---
+
+- Larger numbers work the same way, we just use more bits. You'll talk more about this in CSCB58, as well as how to deal with negative numbers. You don't have to worry about it for now.
+
+
+- Typically, integers in C consist of 32 bits, or 4 bytes. (1 byte = 8 bits)
+
+-----
+
+## Characters
+
+---
+
+- We talked about how characters have a numeric value, and how they can just be thought of as an integer value on which you can do mathematical operations. 
+
+> So, how are they actually stored in memory?
+
+---
+
+- They key here is the ASCII table. For each character that can appear in text, the ASCII table lists a unique corresponding integer between 0 and 255. 
+
+Here are some common examples:
+
+```c
+                  character           ASCII Value 
+                -----------------------------------
+                    '\0'                    0          
+                               ...                 
+                     'A'                   65
+                     'B'                   66
+                               ...
+                     'a'                   97
+                     'b'                   98
+                               ...  
+```
+
+---
+
+- Now, these ASCII values are simply integers, so they are encoded in the same way we described earlier, and then stored in memory as bits.
+
+- Each character uses 8 bits (or 1 byte) since you need at least that many to be able to store 256 different values. 
+
+- This has no particular significance other than that is what people thought would be enough for standard text!
 
 
 -----
 
-## Working with Arrays
+## Floating Point Numbers
 
 ---
 
-- In this exercise, we will write a program that takes in an array of numbers, and then computes the sine and cosine of these numbers using the **`sin()`** and **`cos()`** functions of the math library. 
+- Floating point numbers are much harder to store.  
 
-- We will use *only array notation* (no pointers for now).
+- We need to come up with a clever way to do this consistently, since we can have numbers that are very big, and also numbers that are very small. 
 
+> What do you think is a good way to do this? (Hint: you have seen something like this before!)
 
 ---
 
-Complete the following functions:
+We will use scientific notation! Consider the case where we are trying to store the number `3.141592` in memory. 
 
-```c
-#include<math.h>
+---
 
-// Complete the prototype. What parameters are needed?
-void computeSineCosine( ... parameters ... ) {
-  // Complete this function!
+`Number: 3.141592`
 
-}
+- First write it in the form `.3141592 * 10^1` (so that the first non-zero digit is immediately to the right of the decimal point)
+- Now, we can separately convert `3141592` (as an integer) and `1` (which is the power of 10) to binary, and store them as bits.
+- `3141592` here is called the 'mantissa' and `1` is called the 'exponent'
+
+---
+
+Let's look at another example. Let the number be `25.5`.
+
+- First we write it as `.255 * 10^2`.
+- Convert `255` and `2` to bits and store them.
+- `255` is `'11111111'` in binary, and `2` is `'10'`.
+
+---
+
+- Typically, 32 bits (4 bytes) are used for a `float`, and 64 bits (8 bytes) are used for a `double`. 
+
+- There are international standards that specify how many bits to use for the mantissa and exponent, you'll see all of that in CSCB58! 
+
+-----
+
+## Images
+
+---
+
+We will start by looking at grayscale (black and white) images. The thing to note here is that every image is made of pixels. 
+
+
+> How would you encode and store a grayscale image in memory?
+
+---
+
+- For a grayscale image, each pixel has a brightness value between 0 (black) and 255 (white). 
+
+- Values in between both of these numbers are varying shades of gray, from almost black to almost white. 
+
+- We already know that we can store values from 0-255 in one byte, so we're going to need one byte per pixel.
+
+---
+
+Now, the question is
+
+> How do we store all the pixels in the image (which is 2-dimensional) into a string of bits (which is one dimensional)? 
+
+---
+
+- A common approach is to first store all the pixels in the first row, then all the pixels in the second row, etc. 
+
+- This is called *row-major* order. 
+
+- You will see more of this on A1, where you'll be working with `.pgm` images, which use exactly this format to store the images!
+
+---
+
+> How would you now extend this idea to encode a colour image?
+
+---
+
+- Every colour in an image can be made using some combination of the colours *Red*, *Green* and *Blue* (often called RGB). 
+
+- Now, for each pixel, insteading of storing one single value, we store a triplet of values, indicating the amount of R, G and B. 
+
+- Each of these values will range from 0-255, as before, and each pixel will now have 3 bytes of data. 
+
+- We store the triples in a similar way as the single values for grayscale.
+
+-----
+
+## Sound Recordings
+
+---
+
+Now, lets try thinking of types of data that are harder to encode.
+
+> How would you encode a sound recording in memory?
+
+---
+
+- Sounds can be represented in many different ways on a computer. 
+
+- One way of doing it is storing the frequency (pitch) and amplitude (volume) of the sound at different points in time consecutively. 
+
+- If we have enough of these close to each other, it sounds like a continuous stream of audio! 
+
+---
+
+- Each of these values can be encoded as floating point numbers (between -1 and 1) or integers (between 0 to 255, or -127 to 127) and then encoded as bits.
+
+- There are a lot more complex methods of encoding audio that are beyond the scope of what we are trying to cover right now, but it boils down to a similar principle at the end of the day - everything is just numbers!
+
+-----
+
+## Computer Code
+#### (Hold on to your hats)
+
+---
+
+- When we compile our C code, it is turned into CPU instructions. 
+
+- These are very simple instructions that tell the CPU exactly what it's supposed to be doing at any time. 
+
+---
+
+Lets look at a simple example (It's ok if you don't fully understand this!)
+
+
+```python
+        C instruction       CPU Instruction (MIPS 32)   
+      --------------------------------------------------
+         x = x+1;              LW $t1,x          (1)
+         
+                               ADDI $t1,$t1,1    (2)
+                                               
+                               SW $t1,x          (3)
 ```
+*(Note: MIPS 32 is a set of CPU instructions - you'll learn more about it in CSCB58!)*
+
+---
+
+Let's look at what each of these instructions here means:
+
+```python
+        C instruction       CPU Instruction (MIPS 32)   
+      --------------------------------------------------
+         x = x+1;              LW $t1,x          (1)
+         
+                               ADDI $t1,$t1,1    (2)
+                                               
+                               SW $t1,x          (3)
+```
+- (1) `LW` is used to *load* information. We're loading the value of `x` into the CPU's memory (a register) called `t1` so we can manipulate it.
+
+---
+
+Let's look at what each of these instructions here means:
+
+```python
+        C instruction       CPU Instruction (MIPS 32)   
+      --------------------------------------------------
+         x = x+1;              LW $t1,x          (1)
+         
+                               ADDI $t1,$t1,1    (2)
+                                               
+                               SW $t1,x          (3)
+```
+(2) `ADDI` is used for addition. This line tells the CPU to add `1` to the value in the register `t1`.
+
+---
+
+Let's look at what each of these instructions here means:
+
+```python
+        C instruction       CPU Instruction (MIPS 32)   
+      --------------------------------------------------
+         x = x+1;              LW $t1,x          (1)
+         
+                               ADDI $t1,$t1,1    (2)
+                                               
+                               SW $t1,x          (3)
+```
+
+- (3) `SW` is used to *store* information. We're saving the new value in the register `t1` back into the locker for `x`.
+
+---
+
+Now, we can encode the different pieces of each CPU instruction. 
+
+- Each instruction has a unique integer ID, which we can encode in binary. 
+
+- Each CPU register also has a unique integer ID.
+
+- The arguments can also be stored in binary since they are either numbers (remember even characters are stored as numbers) or pointers (which are memory addresses, and also just numbers).
+
+---
+
+Here is an example of how the encoding would work:
+
+```python
+ --------------------------------------------------------------
+                       CPU Instruction
+ --------------------------------------------------------------
+      ADDI               $t1           $t1            1
+ 
+ --------------------------------------------------------------
+  Instruction ID      Register ID    Register ID    Argument
+ --------------------------------------------------------------
+       05                01             01            1
+  
+ --------------------------------------------------------------
+                            In Bits
+ --------------------------------------------------------------
+      0101              0001           0001          0001
+```
+
+---
+
+- Once again, the point of this example is to illustrate that we can store very complex data in memory by being smart about how we choose to encode it. 
+
+- It's ok to be a little lost here - you will learn all of this in depth in your upper year courses. 
+
+-----
+
+## Having some fun!
+#### (and breaking some stuff)
+
+---
+
+- Lets try and see if we can have some fun using the stuff we just learned!
+
+- *You should never be doing something like this! This is just to give you a better understanding of how C deals with types.*
+
+- Try and figure out what the following code does:
+
+---
+
 ```c
+#include<stdio.h>
+#include<stdlib.h>
+
 int main() {
-  //  - First, Declare an array 'array' with 10 floating 
-  //     point numbers. Fill up this array with numbers 
-  //     such that       array[i] = (2 * pi * i) / 10
+  char stringy[7] = "Logic!";
+  char *c;
+  int *i;
+  float *f;
 
-  //  - Then, declare 2 arrays 'sin_theta' and 'cos_theta', 
-  //    both having 10 floating point numbers each.
+  printf("My string says: %s\n",stringy);
 
-  //  - Finally, call the computeSineCosine() which computes
-  //    the sine and cosine of all the numbers in 'array'
-
-  return 0;
-}
+  // Let's get a pointer to the string!
+  c = i = f = &stringy[0];  // Shorthand to assign same value
 ```
-
----
-
-
-- After you're done with this, draw out the memory model on a piece of paper and trace the code to make sure you really understand how this works in memory.
-
-- You should know how your function is getting access to the arrays, and how the computed values are being stored.
-
----
-
-### This is important!
-
-- Understanding how arrays work properly is going to be something that will be useful to you for the rest of your programming career in C, and can help you avoid a lot of common mistakes.
-
------
-
-## Using pointers!
-
-
----
-
-- Now, complete the same exercise as before, except using pointers instead of array notation. (Your function will now take in pointers).
-
----
-
-Remember this pointer notation:
-- Get the address using the **`&`** operator. **`&array[5]`** gets the address of the 6<sup>th</sup> entry in **`array`**.
-
-- Accessing information using the **`*`** operator. **`*(p)`** is accessing the location whose address is in **`p`**.
-
-- We can replace **`(p)`** with expressions that modify the address. **`*(p+3)`**  is accessing the location whose address is **`p+3`**
-
-
----
-
-Once you're done with this, make sure you can answer the following questions:
-
-- How would these programs be different if you traced the memory model?
-
-- What's the difference between using pointers vs. using arrays?
-
-- In this case, or in general, should you be using pointers or arrays? Why?
-
------
-
-## *Some technical issues*
-
----
-
-- The **`sin()`** and **`cos()`** functions are part of the math library, which are not available to you by default. To use these functions, you need to include the math library using 
-
-**```#include<math.h>```**
-
-
----
-
-- When compiling your code with the math library included, you need to add the ***`-lm`*** flag. 
-
-- This tells the compiler to **l**ink the **m**ath library, which means it will find and include it when compiling your program. 
-
-- For example, instead of **`gcc file.c`**, we would now compile with **`gcc file.c -lm`**. Without this, you may get an error.
-
----
-
-- The math library is one of the most used ones available, with a host of different functions and constants you can use! 
-
-- You should look up what else is available to use, it may be helpful to you when programming in C - there's no need to reinvent the wheel.
-
-
------
-
-## The `const` modifier
-
-
----
-
-- Passing an array or a pointer to an array to a function gives the it full power to change data in that array. 
-
-- What if we want to give a function access to the contents of the array, but not let it modify the data?
-
-- This is where the **`const`** modifier comes in. We use it in a variable declaration to say that this variable cannot be modified. 
-
-
----
-
-For instance, if we use the example in the exercises earlier, we would now declare our function as follows:
-
 ```c
-void computeSineCosine(const float array[10], ... ) { ... }
-```
+  printf("Wait a sec, is it really a string?\n");
+  printf("I think it may be a char! %c\n",*c);
+  printf("Or perhaps it's an int??? %d\n",*i);
+  printf("Or maybe a float?? %f\n",*f);
 
-
-- This declaration says that **`array`** is going to be treated as a constant inside the function.
-
-- This means that the function's code **will not be allowed** to change its contents *(by the compiler!)*. 
-
----
-
-- This ensures that we can pass an array to a function without worrying about it being changed. 
-
-- It's similar to the idea of immutable data in Python, except here we control exactly what is treated as a **`const`**, and what is not.
-
-- *Would it make sense to declare the **`sin_theta`** and **`cos_theta`** parameters using **`const`**? Why / Why not?*
-
----
-
-- You may have seen the **`const`** modifier before if you were looking at functions in the string library **`string.h`**. 
-
-- It is used there often to ensure that the strings you are working on are not modified when you don't expect them to be.
-
----
-
-As an exercise, for the following functions, which of the parameters should have a **`const`** modifier? Why?
-
-- `strcpy(string A, string B)`
-
-- `strcat(string A, string B)`
-
-- `strlen(string A)`
-
-
------
-
-## Additional exercises
-
-
----
-
-- Write a function **`countOccurences()`** that takes in a string as input, and counts the number of times each character appears in it. Think carefully about how you would return the result.
-
----
-
-- Write a function **`stringConcatenate()`** that takes in 2 strings, and concatenates the 2<sup>nd</sup> string at the end of the 1<sup>st</sup> one. Do this using both arrays and pointers, and without using the **`string.h`** library.
-
----
-
-- Write a function **`isSubstring()`** that takes in 2 strings, and returns **`1`** if the 1<sup>st</sup> string is a substring of the 2<sup>nd</sup> one, and **`0`** otherwise.
-
----
-
-- Complete the following function:
-
-```c
-void replaceSubstring(char *str, char *a, char *b) {
-  /* If 'a' is a substring of 'str', then the corresponding 
-   * section of 'str' is replaced with 'b'.
-   *
-   * For example:
-   *
-   *       char str[50] = "Hello World!";
-   *       replaceSubstring(str, "llo W", "---");
-   *       printf("%s\n", str);
-   *
-   * should print out "He---orld!"
-   */
-
- return;
-}
-```
+  printf("This gets really weird!\n");
+  *i=1768382797;
+  printf("My string says: %s\n",stringy);
+  printf("What just happened!!!????\n");
+ }
+ ```
+ 
 
 <!-- {% endraw %} -->

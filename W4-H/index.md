@@ -37,7 +37,7 @@ Let's look at how come common data types are represented in binary!
 
 Here's the first few (non-negative) integers represented in binary:
 
-```
+```python
   value                  bits                 
 -------------------------------
     0                    0000                 
@@ -62,7 +62,7 @@ We talked about how characters have a numeric value, and how they can just be th
 
 They key here is the ASCII table. For each character that can appear in text, the ASCII table lists a unique corresponding integer between 0 and 255. Here are some common examples:
 
-```
+```c
   character           ASCII Value                 
 -----------------------------------
     '\0'                    0                 
@@ -162,15 +162,21 @@ Now, we can encode the different pieces of each CPU instruction.
 - The arguments can also be stored in binary since they are either numbers (remember even characters are stored as numbers) or pointers (which are memory addresses, and also just numbers).
 
 Here is an example of how the encoding would work:
-```
-     ADDI               $t1           $t1            1
-
---------------------------------------------------------------
- Instruction ID      Register ID    Register ID    Argument
-      05                01             01            1
+```python
+ --------------------------------------------------------------
+                       CPU Instruction
+ --------------------------------------------------------------
+      ADDI               $t1           $t1            1
  
--------------------------- In bits ---------------------------
-     0101              0001           0001          0001
+ --------------------------------------------------------------
+  Instruction ID      Register ID    Register ID    Argument
+ --------------------------------------------------------------
+       05                01             01            1
+  
+ --------------------------------------------------------------
+                            In Bits
+ --------------------------------------------------------------
+      0101              0001           0001          0001
 ```
 
 Once again, the point of this example is to illustrate that we can store very complex data in memory by being smart about how we choose to encode it. It's ok to be a little lost here - you will learn all of this in depth in your upper year courses. 
@@ -210,7 +216,9 @@ int main() {
  }
  ```
 
- Why does the code do this?
+ Why does the code do this? Make sure you understand!
+
+ > You should absolutely never have to do something like this - it is extremely bad practice. This is for demonstration purposes only :)
  
  ---
 [Slideshow version](slides/)

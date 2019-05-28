@@ -193,17 +193,14 @@ Knowing what we just learned, try and figure out what this code does:
 
 int main() {
   char stringy[7] = "Logic!";
-  char *c;
-  int *i;
-  float *f;
+  // Make pointers to string!
+  char  *c = (char  *) &stringy[0];
+  int   *i = (int   *) &stringy[0];
+  float *f = (float *) &stringy[0];
 
   printf("My string says: %s\n",stringy);
-
-  // Let's get a pointer to the string!
-  c=&stringy[0];
-  i=&stringy[0];
-  f=&stringy[0];
-
+```
+```c
   printf("Wait a sec, is it really a string?\n");
   printf("I think it may be a char! %c\n",*c);
   printf("Or perhaps it's an int??? %d\n",*i);
@@ -212,8 +209,10 @@ int main() {
   printf("This gets really weird!\n");
   *i=1768382797;
   printf("My string says: %s\n",stringy);
+  *i=1870029128;
+  printf("My string says: %s\n",stringy);
   printf("What just happened!!!????\n");
- }
+}
  ```
 
  Why does the code do this? Make sure you understand!

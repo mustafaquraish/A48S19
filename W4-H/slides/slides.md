@@ -362,14 +362,12 @@ Here is an example of how the encoding would work:
 
 int main() {
   char stringy[7] = "Logic!";
-  char *c;
-  int *i;
-  float *f;
+  // Make pointers to string!
+  char  *c = (char  *) &stringy[0];
+  int   *i = (int   *) &stringy[0];
+  float *f = (float *) &stringy[0];
 
   printf("My string says: %s\n",stringy);
-
-  // Let's get a pointer to the string!
-  c = i = f = &stringy[0];  // Shorthand to assign same value
 ```
 ```c
   printf("Wait a sec, is it really a string?\n");
@@ -380,8 +378,10 @@ int main() {
   printf("This gets really weird!\n");
   *i=1768382797;
   printf("My string says: %s\n",stringy);
+  *i=1870029128;
+  printf("My string says: %s\n",stringy);
   printf("What just happened!!!????\n");
- }
+}
  ```
  
 

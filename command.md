@@ -64,7 +64,7 @@ It usually consists of your username (mustafa), the name of the device (xps), an
 
 - Pressing `tab` will auto-complete the names of files/folders in the current directory.
 
-- On Powershell, right-clicking can be used to copy and paste text. On Mac, use `Ctrl+C` and `Ctrl+V`. On Linux, use `Ctrl+Shift+C` and `Ctrl+Shift+V`.
+- On Powershell, right-clicking can be used to copy and paste text. On Mac, use `Cmd+C` and `Cmd+V`. On Linux, use `Ctrl+Shift+C` and `Ctrl+Shift+V`.
 
 - If you don't know what a command does, or how to use is, run `man <command name>` in your terminal to get information on how it works!
 

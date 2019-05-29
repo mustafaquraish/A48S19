@@ -100,7 +100,7 @@ $3 = 100
 ```
 You can also (if you need to) change the value of variables in memory using the `set` command.
 ```
-(gdb) set variable n = 50
+(gdb) set variable n = 10
 (gdb) print n
 $4 = 10
 ```

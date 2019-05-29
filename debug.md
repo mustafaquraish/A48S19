@@ -1,6 +1,6 @@
 ---
 title: Debugging Your Code
-sidebar-legal: 14
+sidebar-legal: 16
 sidebar-title: Debugging
 ---
 

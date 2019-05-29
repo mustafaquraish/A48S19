@@ -11,7 +11,7 @@ There's no easy way to do this, except test, *test, and  **test!*** You want to 
 
 Most of the time (on Windows, at least) you will get a nice window that shows up and tells you that the program ended unexpectefly, however this may not always be the case. 
 
-This is where the return value of `main()` comes into play. Remember how we said that we return `0` in main at the end of our code. This return value (also called *exit status*) is sent back to the terminal, which is stored in a varianle and can be used to say if your program ended successfully or not. Whenever your program crashes, it will return with a **non-zero** exit status. 
+This is where the return value of `main()` comes into play. Remember how we said that we return `0` in main at the end of our code. This return value (also called *exit status*) is sent back to the terminal, which is stored in a variable and can be used to say if your program ended successfully or not. Whenever your program crashes, it will return with a **non-zero** exit status. 
 
 On your Windows terminal, you can check the exit status of your previously run command using this:
 ```
@@ -39,6 +39,10 @@ to see if they are behaving the way I would expect them to, and find out where s
 
 If you prefer a more systematic way of debugging your code using a debugger, you can use GDB for this. Be warned that it's not as nice as the Python debugger you may be used to from CSCA08, and you will need to run it from the Command-Line. I'm going to demonstrate some very basic usage of GDB here, however it is extremely powerful and you can learn a lot more about the things it can do [here](http://www.yolinux.com/TUTORIALS/GDB-Commands.html).
 
+If you don't already have GDB installed, you can install it with this command on Windows (run this `C:\MinGW\bin`):
+```
+mingw-get.exe install gdb
+```
 
 Here, I'm using the following code to run the example on, in case you want to follow along.
 ```c

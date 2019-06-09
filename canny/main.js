@@ -1,9 +1,11 @@
 let imgElement = document.getElementById('imageSrc');
+let slider1 = document.getElementById('myRange');
 let inputElement = document.getElementById('fileInput');
 
 var edges = undefined;
 var mat = undefined;
 
+let THRESH1 = 100;
 let canny = true;
 
 function download(filename, text) {
@@ -31,7 +33,7 @@ function displayImage() {
 
   if (canny) {
     edges = new cv.Mat();
-    cv.Canny(mat, edges, 50, 100, 3, false);
+    cv.Canny(mat, edges, THRESH1, 100, 3, false);
     for (let j = 0; j < edges.rows; j++) {
       for (let i = 0; i < edges.cols; i++) {
         let idx = i + j*edges.cols;
@@ -49,6 +51,12 @@ function displayImage() {
   }
 
   cv.imshow('canvasOutput', edges);
+}
+
+slider1.onchange = function() {
+  THRESH1 = parseFloat(this.value);
+  console.log('slider value:'+this.value);
+  displayImage();
 }
 
 imgElement.onload = function() {

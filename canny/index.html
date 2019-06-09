@@ -34,7 +34,12 @@
   </div>
   <input type="file" id="fileInput" name="file" accept="image/*"> <input type="checkbox" id="scales" name="scales"
   onclick="edgeCheck()" checked>
-<label for="scales">Edge Detection</label><br>
+<label for="scales">Edge Detection</label>
+
+<input type="range" min="50" max="200" value="100" class="slider" id="myRange">
+<label for="myRange">Threshold</label>
+
+<br>
 
   <div>
     File name: <input id="fileName" type="text" value="out.txt">

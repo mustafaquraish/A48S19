@@ -10,6 +10,8 @@ No tutorial in the first week of class! However, make sure you've done the follo
 
  - Looked at and attempted exercise 1.
 
+ - Run your ex5 on blank.pgm
+
  - Got yourself a good code editor (I highly recommend [vscode](https://code.visualstudio.com/)). Try to avoid using
     IDEs since you're going to have to get used to the command line eventually - better now than later!
 

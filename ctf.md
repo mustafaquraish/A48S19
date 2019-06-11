@@ -36,7 +36,7 @@ but most imporantly
 
 ---
 
-*NOTE: Every person gets only one attempt, and we can see if you have edited your response! Only the earliest correct response will get a prize. You should be able to show any code you have used to find the flag.*
+*NOTE: Every person gets only one attempt. Anything written in the form `{text}` will be considered an attempt. We can see if you have edited your response! Only the earliest correct response will get a prize. You should be able to show any code you have used to find the flag.*
 
 ---
 ## Your Clue

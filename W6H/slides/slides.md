@@ -30,6 +30,9 @@ What would be the output if you ran the following commands in order?
   8. forward 200         |   
 ```
 
+---
+
+
 Ask yourself this - what sort of things could you *not* draw using the assignment?
 
 -----

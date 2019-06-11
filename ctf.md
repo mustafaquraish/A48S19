@@ -17,7 +17,7 @@ Your mission - if you choose to accept it - will be to follow the series of clue
 {FLAG-HERE}
 ```
 
-Some of these challenges will not be easy - you will have to use the material you have learned in this course so far. When in doubt, try and think of how the problem you are faced with can be connected to something you have already seen. The clues will be hidden, so keep an eye out! No further hints will be given! Don't ask for help on Piazza, these are meant to be solved yourself. No further hints will be given. Look closely at w
+Some of these challenges will not be easy - you will have to use the material you have learned in this course so far. You have already seen (in some part) all of the methods that can be used to solve the challenges. The clues will be hidden, so keep an eye out! No further hints will be given! Don't ask for help on Piazza, these are meant to be solved yourself. No further hints will be given. 
 
 ---
 ## The Prize

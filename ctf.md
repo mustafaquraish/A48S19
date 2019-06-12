@@ -17,23 +17,32 @@ Your mission - if you choose to accept it - will be to follow the series of clue
 {FLAG-HERE}
 ```
 
-Some of these challenges will not be easy - you will have to use the material you have learned in this course so far. When in doubt, try and think of how the problem you are faced with can be connected to something you have already seen. The clues will be hidden, you keep an eye out!
+Some of these challenges will not be easy - you will have to use the material you have learned in this course so far. You have already seen (in some part) all of the methods that can be used to solve the challenges. The clues will be hidden, so keep an eye out! No further hints will be given! Don't ask for help on Piazza, these are meant to be solved yourself. No further hints will be given. 
 
 ---
 ## The Prize
 ---
-The first person to successfully find the flag and make a response to the Piazza post will be given the following prize (plus bragging rights for the rest of the semester!)
+The first person to successfully find the flag and make a response to the Piazza post will be declared the winner.
 
-<img src="https://static.lindt.ca/en/shop/media/catalog/product/cache/6/thumbnail/405x400/9df78eab33525d08d6e5fb8d27136e95/l/i/lindor_3pack_milk.png"/>
+You will get:
+- A [small box of Lindt](https://static.lindt.ca/en/shop/media/catalog/product/cache/6/thumbnail/405x400/9df78eab33525d08d6e5fb8d27136e95/l/i/lindor_3pack_milk.png) from me (or your favorite chocolate)
+- Additional chocolates from Paco
+- A sense of pride and accomplishment for being the winner
+
+but most imporantly
+
+- Bragging rights for the rest of the semester!
+
 
 ---
 
-*NOTE: Every person gets only one attempt, and we can see if you have edited your response! Only the earliest correct response will get a prize. You should be able to show any code you have used to find the flag.*
+*NOTE: Every person gets only one attempt. Anything written in the form `{text}` will be considered an attempt. We can see if you have edited your response! Only the earliest correct response will get a prize. You should be able to show any code you have used to find the flag.*
 
 ---
 ## Your Clue
 ---
-The challenge actually started on the 0<sup>th</sup> week.
+You're too late for your clue, should have come here earlier. The challenge actually started on the 0<sup>th</sup> week.
 
 ---
-## Good luck!
+
+## <center> Good luck! </center>

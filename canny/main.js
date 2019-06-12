@@ -5,7 +5,7 @@ let inputElement = document.getElementById('fileInput');
 var edges = undefined;
 var mat = undefined;
 
-let THRESH1 = 100;
+let THRESH1 = 128;
 let canny = true;
 
 function download(filename, text) {
@@ -45,7 +45,7 @@ function displayImage() {
     for (let j = 0; j < edges.rows; j++) {
       for (let i = 0; i < edges.cols; i++) {
         let idx = i + j*edges.cols;
-        edges.data[idx] = (edges.data[idx] > 128) ? 255 : 0;
+        edges.data[idx] = (edges.data[idx] >= THRESH1) ? 255 : 0;
       }
     }
   }

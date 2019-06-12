@@ -129,12 +129,12 @@ int main(void) {
   void *data=NULL;
 
   // What do these 2 lines do?
-  int_data=(int *)calloc(1000,sizeof(int));
-  for (int i=0; i<1000; i++) *(int_data+i)=i;
+  int_data=(int *)calloc(20,sizeof(int));
+  for (int i=0; i<20; i++) *(int_data+i)=i;
 
   // Now what do these 2 lines do?
   char_data=(char *)int_data;
-  for (int i=0; i<1000; i++) *(char_data+i)='A';
+  for (int i=0; i<20; i++) *(char_data+i)='A';
 
   return 0;
 }

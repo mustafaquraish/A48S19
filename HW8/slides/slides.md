@@ -113,6 +113,4 @@ Answer the following:
 
 - Can you think of a way to improve this algorithm?
 
----
-
 <!-- {% endraw %} -->

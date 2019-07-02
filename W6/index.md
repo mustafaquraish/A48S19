@@ -158,3 +158,6 @@ wants to put there, and how much it can store with what it reserved.
 2. Write a function that takes in appropriate sizes and dynamically allocates a two dimensional array. Initialize the array such that `arr[i][j] = i + j*j`. (We talked about how to store a 2-dimentional array as a 1-dimensional array last tutorial!)
 
 3. Do your exercise 2 using `calloc`! Make it so that all the input strings are not changed, and you should instead allocate the correct amount of memory for the output string, and then return a pointer to it.
+
+---
+[Slideshow version](slides/)

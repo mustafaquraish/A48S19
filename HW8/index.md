@@ -1,6 +1,6 @@
 ---
 title: Week 8 Tutorial
-# sidebar: 8
+sidebar: 8
 sidebar-title: Week 8
 ---
 
@@ -16,7 +16,7 @@ When you're done, see if you can answer these questions:
 - Do you understand your algorithm well enough to implement it?
 - What is the worst-case time complexity?
 - How much extra space does your algorithm use?
-- Can you improve your algorithm?
+- Can yoimprove your algorithm?
 
 ---
 

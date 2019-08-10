@@ -1,6 +1,6 @@
 ---
 title: Week 10 Tutorial
-# sidebar: 10
+sidebar: 10
 sidebar-title: Week 10
 ---
 

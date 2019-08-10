@@ -5,7 +5,9 @@ sidebar-title: Week 11
 ---
 
 ---
+
 ## Simple Graphs
+
 ---
 
 First, let's work out a little graph, and come up with an adjacency list and an adjacency matrix for it.
@@ -25,7 +27,9 @@ This is an undirected graph, so the diagonal of the matrix should be 0.
 Double check that everything is ok with your graph by checking that it is symmetric. This trick works since if person A knows person B then person B knows person A.
 
 ---
-##Trying out BFS and DFS
+
+## Trying out BFS and DFS
+
 ---
 
 Pick two points in your graph and use DFS to get from one point to the other. Here are some things to keep in mind:
